@@ -1,0 +1,3 @@
+﻿Public Class XR_ENVIO_DOCUMENTO_REPORTE
+
+End Class

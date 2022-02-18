@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{061F39B6-1088-4A85-BCAE-5061780F07D8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>MC.AdministracionTienda</RootNamespace>
+    <AssemblyName>MC.AdministracionTienda</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\PublicarPE\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <PublisherName>MACROSCEM</PublisherName>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.2</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AdministracionTienda.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D9A9B4A21808DC2573578EEA51C17173B701BF19</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MC.Windows_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.BonusSkins.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v16.1.Core, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v16.1.Core, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1.Wizard, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1.UI, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v16.1.Core, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.1.UI, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1.Extensions, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v16.1.Reporting.Extensions, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v16.1.Core, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PrintRibbonControllerResources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SubMain.vb" />
+    <Compile Include="View\BeneficiosNorkys.Designer.vb">
+      <DependentUpon>BeneficiosNorkys.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\BeneficiosNorkys.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BeneficiosNorkysDetails.Designer.vb">
+      <DependentUpon>BeneficiosNorkysDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\BeneficiosNorkysDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BuscaDocumentoNC.designer.vb">
+      <DependentUpon>BuscaDocumentoNC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\BuscaDocumentoNC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClienteFacturadoEdit.Designer.vb">
+      <DependentUpon>ClienteFacturadoEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClienteFacturadoEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClienteFacturadoList.Designer.vb">
+      <DependentUpon>ClienteFacturadoList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClienteFacturadoList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CodigoEntelDetails.Designer.vb">
+      <DependentUpon>CodigoEntelDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\CodigoEntelDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CodigoEntelList.designer.vb">
+      <DependentUpon>CodigoEntelList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\CodigoEntelList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ControlAsistencia.Designer.vb">
+      <DependentUpon>ControlAsistencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlAsistencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ActivacionCallCenter.Designer.vb">
+      <DependentUpon>ActivacionCallCenter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivacionCallCenter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ControlAsistenciaEmpleadoHY.Designer.vb">
+      <DependentUpon>ControlAsistenciaEmpleadoHY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlAsistenciaEmpleadoHY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ControlAsistenciaHY.Designer.vb">
+      <DependentUpon>ControlAsistenciaHY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlAsistenciaHY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DesktopMain.designer.vb">
+      <DependentUpon>DesktopMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\DesktopMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Init\InitClass.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="View\DocumentosVentaEdicion.Designer.vb">
+      <DependentUpon>DocumentosVentaEdicion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\DocumentosVentaEdicion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DocumentosVentaEdicionDetails.Designer.vb">
+      <DependentUpon>DocumentosVentaEdicionDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\DocumentosVentaEdicionDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DocumentosVentaEdicionItem.Designer.vb">
+      <DependentUpon>DocumentosVentaEdicionItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\DocumentosVentaEdicionItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DocumentosVentaEdicionList.Designer.vb">
+      <DependentUpon>DocumentosVentaEdicionList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\DocumentosVentaEdicionList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EnlaceCallCenter.Designer.vb">
+      <DependentUpon>EnlaceCallCenter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\EnlaceCallCenter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EnvioDocumentosAnexar.Designer.vb">
+      <DependentUpon>EnvioDocumentosAnexar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\EnvioDocumentosAnexar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EnvioDocumentosProcesados.Designer.vb">
+      <DependentUpon>EnvioDocumentosProcesados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\EnvioDocumentosProcesados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EnvioDocumentosProcesadosEdit.Designer.vb">
+      <DependentUpon>EnvioDocumentosProcesadosEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\EnvioDocumentosProcesadosEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LocalesList.Designer.vb">
+      <DependentUpon>LocalesList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\LocalesList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MotorizadoDetails.Designer.vb">
+      <DependentUpon>MotorizadoDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\MotorizadoDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MotorizadoList.Designer.vb">
+      <DependentUpon>MotorizadoList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\MotorizadoList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MozoDetails.designer.vb">
+      <DependentUpon>MozoDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\MozoDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MozoList.designer.vb">
+      <DependentUpon>MozoList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\MozoList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NotaCreditoDetails.designer.vb">
+      <DependentUpon>NotaCreditoDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\NotaCreditoDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NotaCreditoList.designer.vb">
+      <DependentUpon>NotaCreditoList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\NotaCreditoList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReciboEgresoDetalle.designer.vb">
+      <DependentUpon>ReciboEgresoDetalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReciboEgresoDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RecibosEgreso.designer.vb">
+      <DependentUpon>RecibosEgreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecibosEgreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReporteView.designer.vb">
+      <DependentUpon>ReporteView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReporteView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SplashScreenLogin.Designer.vb">
+      <DependentUpon>SplashScreenLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\SplashScreenLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WaitForm.Designer.vb">
+      <DependentUpon>WaitForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\WaitForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BeneficiosNorkys.resx">
+      <DependentUpon>BeneficiosNorkys.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BeneficiosNorkysDetails.resx">
+      <DependentUpon>BeneficiosNorkysDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BuscaDocumentoNC.resx">
+      <DependentUpon>BuscaDocumentoNC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClienteFacturadoEdit.resx">
+      <DependentUpon>ClienteFacturadoEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CodigoEntelDetails.resx">
+      <DependentUpon>CodigoEntelDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CodigoEntelList.resx">
+      <DependentUpon>CodigoEntelList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlAsistencia.resx">
+      <DependentUpon>ControlAsistencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ActivacionCallCenter.resx">
+      <DependentUpon>ActivacionCallCenter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlAsistenciaEmpleadoHY.resx">
+      <DependentUpon>ControlAsistenciaEmpleadoHY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlAsistenciaHY.resx">
+      <DependentUpon>ControlAsistenciaHY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DesktopMain.resx">
+      <DependentUpon>DesktopMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DocumentosVentaEdicion.resx">
+      <DependentUpon>DocumentosVentaEdicion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DocumentosVentaEdicionDetails.resx">
+      <DependentUpon>DocumentosVentaEdicionDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DocumentosVentaEdicionItem.resx">
+      <DependentUpon>DocumentosVentaEdicionItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DocumentosVentaEdicionList.resx">
+      <DependentUpon>DocumentosVentaEdicionList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EnlaceCallCenter.resx">
+      <DependentUpon>EnlaceCallCenter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EnvioDocumentosAnexar.resx">
+      <DependentUpon>EnvioDocumentosAnexar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EnvioDocumentosProcesados.resx">
+      <DependentUpon>EnvioDocumentosProcesados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EnvioDocumentosProcesadosEdit.resx">
+      <DependentUpon>EnvioDocumentosProcesadosEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LocalesList.resx">
+      <DependentUpon>LocalesList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MotorizadoDetails.resx">
+      <DependentUpon>MotorizadoDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MotorizadoList.resx">
+      <DependentUpon>MotorizadoList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MozoDetails.resx">
+      <DependentUpon>MozoDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MozoList.resx">
+      <DependentUpon>MozoList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NotaCreditoDetails.resx">
+      <DependentUpon>NotaCreditoDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NotaCreditoList.resx">
+      <DependentUpon>NotaCreditoList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReciboEgresoDetalle.resx">
+      <DependentUpon>ReciboEgresoDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RecibosEgreso.resx">
+      <DependentUpon>RecibosEgreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReporteView.resx">
+      <DependentUpon>ReporteView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SplashScreenLogin.resx">
+      <DependentUpon>SplashScreenLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\WaitForm.resx">
+      <DependentUpon>WaitForm.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdministracionTienda.ico" />
+    <Content Include="Init\SGL.ico" />
+    <None Include="Resources\Equipos32.png" />
+    <None Include="Resources\Calendario32 .png" />
+    <None Include="Resources\SinFoto.png" />
+    <None Include="Resources\SinFoto.bmp" />
+    <None Include="Resources\Asistencia.png" />
+    <None Include="Resources\Tesoreria.png" />
+    <None Include="Resources\Reportes.png" />
+    <None Include="Resources\ControlInterno.png" />
+    <None Include="Resources\Contabilidad.png" />
+    <None Include="Resources\Consultas.png" />
+    <None Include="Resources\Configuracion.png" />
+    <None Include="Resources\Administracion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MC.Data\MC.Data.vbproj">
+      <Project>{c0727d4a-840e-44ea-9a07-14c77ad52df2}</Project>
+      <Name>MC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MC.Framework\MC.Framework.vbproj">
+      <Project>{cc4aec34-f3b7-4059-9a68-3fcd08a23beb}</Project>
+      <Name>MC.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MC.Report\MC.Report.vbproj">
+      <Project>{f2b21095-6131-439b-be6e-a236a357ffef}</Project>
+      <Name>MC.Report</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
