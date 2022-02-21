@@ -264,6 +264,12 @@
     <Compile Include="View\ClienteFacturadoList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\ClienteFidelizadoList.Designer.vb">
+      <DependentUpon>ClienteFidelizadoList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClienteFidelizadoList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\CodigoEntelDetails.Designer.vb">
       <DependentUpon>CodigoEntelDetails.vb</DependentUpon>
     </Compile>
@@ -460,6 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClienteFacturadoEdit.resx">
       <DependentUpon>ClienteFacturadoEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClienteFidelizadoList.resx">
+      <DependentUpon>ClienteFidelizadoList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CodigoEntelDetails.resx">
       <DependentUpon>CodigoEntelDetails.vb</DependentUpon>
