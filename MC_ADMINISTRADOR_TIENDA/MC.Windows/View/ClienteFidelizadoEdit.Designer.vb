@@ -264,7 +264,6 @@ Partial Class ClienteFidelizadoEdit
         '
         'txtApellidoPaterno
         '
-        Me.txtApellidoPaterno.Enabled = False
         Me.txtApellidoPaterno.Location = New System.Drawing.Point(542, 31)
         Me.txtApellidoPaterno.MenuManager = Me.RibbonControl
         Me.txtApellidoPaterno.Name = "txtApellidoPaterno"
@@ -365,7 +364,6 @@ Partial Class ClienteFidelizadoEdit
         '
         'txtApellidoMaterno
         '
-        Me.txtApellidoMaterno.Enabled = False
         Me.txtApellidoMaterno.Location = New System.Drawing.Point(140, 57)
         Me.txtApellidoMaterno.MenuManager = Me.RibbonControl
         Me.txtApellidoMaterno.Name = "txtApellidoMaterno"
@@ -406,7 +404,6 @@ Partial Class ClienteFidelizadoEdit
         '
         'txtNombrePreferido
         '
-        Me.txtNombrePreferido.Enabled = False
         Me.txtNombrePreferido.Location = New System.Drawing.Point(140, 83)
         Me.txtNombrePreferido.MenuManager = Me.RibbonControl
         Me.txtNombrePreferido.Name = "txtNombrePreferido"
@@ -434,7 +431,6 @@ Partial Class ClienteFidelizadoEdit
         '
         'txtDireccion
         '
-        Me.txtDireccion.Enabled = False
         Me.txtDireccion.Location = New System.Drawing.Point(140, 83)
         Me.txtDireccion.MenuManager = Me.RibbonControl
         Me.txtDireccion.Name = "txtDireccion"
@@ -493,7 +489,6 @@ Partial Class ClienteFidelizadoEdit
         '
         'txtTelefono
         '
-        Me.txtTelefono.Enabled = False
         Me.txtTelefono.Location = New System.Drawing.Point(542, 31)
         Me.txtTelefono.MenuManager = Me.RibbonControl
         Me.txtTelefono.Name = "txtTelefono"
@@ -567,7 +562,6 @@ Partial Class ClienteFidelizadoEdit
         '
         'txtUbigeo
         '
-        Me.txtUbigeo.Enabled = False
         Me.txtUbigeo.Location = New System.Drawing.Point(542, 57)
         Me.txtUbigeo.MenuManager = Me.RibbonControl
         Me.txtUbigeo.Name = "txtUbigeo"
