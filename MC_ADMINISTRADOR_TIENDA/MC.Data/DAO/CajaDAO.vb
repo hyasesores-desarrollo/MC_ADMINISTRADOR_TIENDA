@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class CajaDAO
+
     Public Function GetByAll() As DataTable
         Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentas)
         Dim cmd As New SqlCommand
@@ -52,6 +53,7 @@ Public Class CajaDAO
         End Try
         Return dt
     End Function
+
     Public Function GetCajaDeliveryList() As DataTable
         Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentas)
         Dim cmd As New SqlCommand
@@ -78,6 +80,33 @@ Public Class CajaDAO
         Return dt
 
     End Function
+
+    Public Function GetTurnoActivo(ByVal tCaja As String) As String
+        Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentas)
+        Dim cmd As New SqlCommand
+        Dim dt As New DataTable
+        With cmd
+            .Connection = cnx
+            .CommandType = CommandType.StoredProcedure
+            .CommandText = "MC_OBTENER_TURNO"
+
+            With .Parameters
+                .Add("@tCaja", SqlDbType.NVarChar, 3).Value = tCaja
+            End With
+        End With
+        Try
+            cnx.Open()
+            dt.Load(cmd.ExecuteReader)
+        Catch ex As Exception
+            Throw
+        Finally
+            If cnx.State = ConnectionState.Open Then
+                cnx.Close()
+            End If
+        End Try
+        Return dt.Rows(0)(0).ToString
+    End Function
+
     Public Function ActivacionDesactivacionCajaDelivery(ByVal TCaja As String, ByVal TipoActivacion As Int32, ByVal TCodigoUsuario As String) As Boolean
         Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentas)
         Dim cmd As New SqlCommand
