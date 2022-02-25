@@ -58,7 +58,7 @@ Public Class DesktopMain
         ControlNavBar.BeginUpdate()
         ControlesDevExpress.InitNavBar(ControlNavBar)
         ControlesDevExpress.InitNavBarMenuDesactiva(ControlNavBar, {"ADMINISTRACION COMPRAS", "Envio de Documentos Procesados"}, My.Resources.Administracion, dtsubmodulos)
-        ControlesDevExpress.InitNavBarMenuDesactiva(ControlNavBar, {"ADMINISTRACION VENTAS", "Clientes Fidelizados", "Clientes Facturados", "Mantenimiento de Mozos", "Mantenimiento de Motorizados", "Nota de Credito", "Enlace Call Center", "Código de Promoción", "Beneficios Norkys"}, My.Resources.ControlInterno, dtsubmodulos)
+        ControlesDevExpress.InitNavBarMenuDesactiva(ControlNavBar, {"ADMINISTRACION VENTAS", "Puntos", "Clientes Fidelizados", "Clientes Facturados", "Mantenimiento de Mozos", "Mantenimiento de Motorizados", "Nota de Credito", "Enlace Call Center", "Código de Promoción", "Beneficios Norkys"}, My.Resources.ControlInterno, dtsubmodulos)
         ControlesDevExpress.InitNavBarMenuDesactiva(ControlNavBar, {"CONTROL INTERNO", "Recibos de Egreso", "Documentos de Venta"}, My.Resources.ControlInterno, dtsubmodulos)
         ControlesDevExpress.InitNavBarMenuDesactiva(ControlNavBar, {"ASISTENCIA", "Marcacion de Asistencia", "Marcacion de Asistencia HY"}, My.Resources.Asistencia, dtsubmodulos)
 
@@ -108,29 +108,31 @@ Public Class DesktopMain
 
         Select Case e.Link.Caption.ToString.ToUpper
 
-            'ADMINISTRACION
+            'ALMACEN
             Case "ENVIO DE DOCUMENTOS PROCESADOS" : OpenFormulario("EnvioDocumentosProcesados")
 
-            Case "CLIENTES FIDELIZADOS" : OpenFormulario("ClienteFidelizadoList")
+            'VENTAS
+            Case "PUNTOS" : OpenFormulario("ClienteFidelizadoList")
 
+            Case "CLIENTES FIDELIZADOS" : OpenFormulario("ClienteFidelizadoList")
             Case "CLIENTES FACTURADOS"  'OpenFormulario("ClienteFacturadoEdit")
                 Dim MiForm As New ClienteFacturadoEdit
                 MiForm.ShowDialog()
 
             Case "MANTENIMIENTO DE MOZOS" : OpenFormulario("MozoList")
             Case "MANTENIMIENTO DE MOTORIZADOS" : OpenFormulario("MotorizadoList")
-            Case "ENLACE CALL CENTER" : OpenFormulario("EnlaceCallCenter") 'OpenFormulario("CajaList")
-                'Código de Promoción
-            Case "CÓDIGO DE PROMOCIÓN" : OpenFormulario("CodigoEntelList")
+            Case "ENLACE CALL CENTER" : OpenFormulario("EnlaceCallCenter")
+            Case "CÓDIGO DE PROMOCIÓN" : OpenFormulario("CodigoEntelList") 'Código de Promoción
             Case "BENEFICIOS NORKYS" : OpenFormulario("BeneficiosNorkys")
             Case "NOTA DE CREDITO"
                 tCajaEmision = Tools.ReadAppSettings("Caja")
-                tTurnoActual = NotaCreditoDAO.GetTurnoActivo(tCajaEmision)
+                tTurnoActual = CajaDAO.GetTurnoActivo(tCajaEmision)
                 If tTurnoActual <> "" Then
                     OpenFormulario("NotaCreditoList")
                 Else
                     MessageBox.Show("No existe turno aperturado para la caja : " & tCajaEmision, "Advertencia")
                 End If
+
                 'CONTROL INTERNO
             Case "RECIBOS DE EGRESO" : OpenFormulario("RecibosEgreso")
             Case "DOCUMENTOS DE VENTA" : OpenFormulario("DocumentosVentaEdicionList")

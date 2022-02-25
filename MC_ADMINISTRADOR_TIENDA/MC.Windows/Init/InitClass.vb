@@ -11,7 +11,7 @@ Module InitClass
     Public MozoDAO As New MozoDAO
     Public NotaCreditoDAO As New NotaCreditoDAO
     Public AsistenciaDAO As New AsistenciaDAO
-    Public CajaDao As New CajaDAO
+    Public CajaDAO As New CajaDAO
     Public DocumentoVentaDAO As New DocumentoVentaDAO
     Public ParametroDAO As New ParametroDAO
     Public MotorizadoDAO As New MotorizadoDAO
@@ -21,9 +21,11 @@ Module InitClass
     Public ServidorCentral As String = ConfigurationManager.ConnectionStrings("MC.Windows.My.MySettings.MC_CentralConnectionString").ConnectionString
     Public TipoConexion As Boolean
 
-    'NOTA DE CREDITO
+
     Public tTurnoActual As String
     Public tCajaEmision As String
+
+    'NOTA DE CREDITO
     Public DocumentoSeleccionadoNc As String
     Public idDocumentoSeleccionadoNc As Integer
     Public EstadoNotaC As String
@@ -48,6 +50,7 @@ Module InitClass
     Public BdCentral As String = "MC_CENTRAL"
     Public BdMarcacionLocal As String = "MC_MARCACION"
     Public bsGrilla As New DataTable
+
     Public Function GetUltimoCambio(ByRef objBarStatic As DevExpress.XtraBars.BarStaticItem, BE As Object) As String
         Dim UltimoCambio As String = "El último cambio fue registrado por {0} el {1} a las {2}:{3}:{4}"
         Dim Fecha As DateTime = BE.FechaRegistro

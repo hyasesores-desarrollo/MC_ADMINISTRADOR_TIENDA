@@ -303,7 +303,7 @@ Public Class NotaCreditoDetails
     End Sub
 
     Private Sub btnObtenerTurno_Click(sender As Object, e As EventArgs)
-        tTurnoActual = NotaCreditoDAO.GetTurnoActivo(txtCajaEmision.Text)
+        tTurnoActual = CajaDAO.GetTurnoActivo(txtCajaEmision.Text)
         If tTurnoActual <> "" Then
             txtTurno.Text = tTurnoActual
             dtpFechaEmisionDocumento.Enabled = True
