@@ -175,7 +175,7 @@ Public Class DocumentosVentaEdicionDetails
         DocumentoVentaBE.NumeroDocumentoNew = lblNumero.Text
         DocumentoVentaBE.Total = txtImporteTotal.Text
          DocumentoVentaBE.FechaEmision = lblFecha.Text
-        If (ParametroDAO.Validar_NumeroDocumentoNew(DocumentoVentaBE.NumeroDocumentoNew) > 0) Then
+        If (ParametroDAO.Validar_NumeroDocumentoNew(DocumentoVentaBE.NumeroDocumentoNew) > 0 And DocumentoVentaDAO.tDocumento <> DocumentoVentaBE.NumeroDocumentoNew.ToString) Then
             Result = False
         End If
 
