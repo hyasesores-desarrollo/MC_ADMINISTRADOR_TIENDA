@@ -17,6 +17,7 @@ Module InitClass
     Public MotorizadoDAO As New MotorizadoDAO
     Public CodigoEntelDAO As New CodigoEntelDAO
     Public BeneficioNorkysDAO As New BeneficioNorkysDAO
+    Public ClienteFidelizadoDAO As New ClienteFidelizadoDAO
 
     Public ServidorCentral As String = ConfigurationManager.ConnectionStrings("MC.Windows.My.MySettings.MC_CentralConnectionString").ConnectionString
     Public TipoConexion As Boolean
