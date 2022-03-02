@@ -191,6 +191,7 @@ Public Class DocumentosVentaEdicionDetails
                 Next i
                 DocumentoVentaDAO.Save(DocumentoVentaBE, detalle_documento_totales)
 
+
                 'Elimina el documento en la replicada si es que el documento es nuevo
                 If (DocumentoVentaBE.NumeroDocumento <> DocumentoVentaBE.NumeroDocumentoNew And IdLocal > 0) Then
                     DocumentoVentaDAO.DeleteReplica(IdLocal, DocumentoVentaBE.NumeroDocumento)
