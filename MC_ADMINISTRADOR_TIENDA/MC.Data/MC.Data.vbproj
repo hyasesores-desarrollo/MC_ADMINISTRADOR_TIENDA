@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="BE\DocumentoBE.vb" />
     <Compile Include="BE\DocumentoProcesadoBE.vb" />
+    <Compile Include="BE\DocumentoPuntosBE.vb" />
     <Compile Include="BE\DocumentoVentaBE.vb" />
     <Compile Include="BE\LocalBE.vb" />
     <Compile Include="BE\MotorizadoBE.vb" />
@@ -94,6 +95,7 @@
     <Compile Include="DAO\MozoDAO.vb" />
     <Compile Include="DAO\NotaCreditoDAO.vb" />
     <Compile Include="DAO\ParametroDAO.vb" />
+    <Compile Include="DAO\PuntosDAO.vb" />
     <Compile Include="DAO\SistemaDAO.vb" />
     <Compile Include="MODULOS\DataReaderExtensions.vb" />
     <Compile Include="MODULOS\InitEnumeraciones.vb" />

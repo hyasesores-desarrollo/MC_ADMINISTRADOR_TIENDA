@@ -141,6 +141,7 @@
     <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraGauges.v16.1.Core, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
@@ -232,6 +233,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ImpresionPuntos.Designer.vb">
+      <DependentUpon>ImpresionPuntos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ImpresionPuntos.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SubMain.vb" />
     <Compile Include="View\BeneficiosNorkys.Designer.vb">
@@ -377,12 +384,6 @@
     <Compile Include="View\EnvioDocumentosProcesadosEdit.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Facturacion.Designer.vb">
-      <DependentUpon>Facturacion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="View\Facturacion.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="View\LocalesList.Designer.vb">
       <DependentUpon>LocalesList.vb</DependentUpon>
     </Compile>
@@ -431,6 +432,18 @@
     <Compile Include="View\NotaCreditoList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\Puntos.Designer.vb">
+      <DependentUpon>Puntos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Puntos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PuntosClientes.Designer.vb">
+      <DependentUpon>PuntosClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\PuntosClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\ReciboEgresoDetalle.designer.vb">
       <DependentUpon>ReciboEgresoDetalle.vb</DependentUpon>
     </Compile>
@@ -466,6 +479,9 @@
     <EmbeddedResource Include="PrintRibbonControllerResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PrintRibbonControllerResources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ImpresionPuntos.resx">
+      <DependentUpon>ImpresionPuntos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\BeneficiosNorkys.resx">
       <DependentUpon>BeneficiosNorkys.vb</DependentUpon>
@@ -537,9 +553,6 @@
     <EmbeddedResource Include="View\EnvioDocumentosProcesadosEdit.resx">
       <DependentUpon>EnvioDocumentosProcesadosEdit.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Facturacion.resx">
-      <DependentUpon>Facturacion.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\LocalesList.resx">
       <DependentUpon>LocalesList.vb</DependentUpon>
     </EmbeddedResource>
@@ -563,6 +576,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NotaCreditoList.resx">
       <DependentUpon>NotaCreditoList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Puntos.resx">
+      <DependentUpon>Puntos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PuntosClientes.resx">
+      <DependentUpon>PuntosClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ReciboEgresoDetalle.resx">
       <DependentUpon>ReciboEgresoDetalle.vb</DependentUpon>
@@ -642,6 +661,7 @@
       <Name>MC.Report</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
