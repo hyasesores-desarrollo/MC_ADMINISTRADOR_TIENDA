@@ -7,6 +7,7 @@ Public Class DocumentoVentaDAO
     Public IDProducto As String
     Public Producto As String
     Public tCodigoPedido As String
+
     Public Function GetByID(ByVal tDocumento As String) As DocumentoVentaBE
         Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentas)
         Dim cmd As New SqlCommand
@@ -131,8 +132,6 @@ Public Class DocumentoVentaDAO
                 .Add("@tCodigoProducto", SqlDbType.VarChar, 20).Value = tCodigoProducto
                 .Add("@Total", SqlDbType.Float).Value = Total
                 .Add("@Imp2", SqlDbType.Bit).Value = Imp2
-
-
             End With
         End With
 
@@ -179,6 +178,33 @@ Public Class DocumentoVentaDAO
             End If
         End Try
         Return Result
+    End Function
+
+    Public Function ListadoDocumentosPuntos(FechaInicial As Date, FechaFinal As Date) As DataTable
+        Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentas)
+        Dim cmd As New SqlCommand
+        Dim dt As New DataTable
+
+        With cmd
+            .Connection = cnx
+            .CommandTimeout = 0
+            .CommandType = CommandType.StoredProcedure
+            .CommandText = "MC_DOCUMENTOS_VENTAS_CLIENTE_LIST"
+            .Parameters.Add("@FechaInicial", SqlDbType.Date).Value = FechaInicial
+            .Parameters.Add("@FechaFinal", SqlDbType.Date).Value = FechaFinal
+        End With
+
+        Try
+            cnx.Open()
+            dt.Load(cmd.ExecuteReader)
+        Catch ex As Exception
+            Throw
+        Finally
+            If cnx.State = ConnectionState.Open Then
+                cnx.Close()
+            End If
+        End Try
+        Return dt
     End Function
 
 End Class

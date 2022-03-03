@@ -112,7 +112,7 @@ Public Class DesktopMain
             Case "ENVIO DE DOCUMENTOS PROCESADOS" : OpenFormulario("EnvioDocumentosProcesados")
 
             'VENTAS
-            Case "PUNTOS" : OpenFormulario("ClienteFidelizadoList")
+            Case "PUNTOS" : OpenFormulario("Puntos")
 
             Case "CLIENTES FIDELIZADOS" : OpenFormulario("ClienteFidelizadoList")
             Case "CLIENTES FACTURADOS" ': OpenFormulario("ClienteFacturadoEdit")
