@@ -115,7 +115,7 @@ Public Class DesktopMain
             Case "PUNTOS" : OpenFormulario("Puntos")
 
             Case "CLIENTES FIDELIZADOS" : OpenFormulario("ClienteFidelizadoList")
-            Case "CLIENTES FACTURADOS"  'OpenFormulario("ClienteFacturadoEdit")
+            Case "CLIENTES FACTURADOS" ': OpenFormulario("ClienteFacturadoEdit")
                 Dim MiForm As New ClienteFacturadoEdit
                 MiForm.ShowDialog()
 

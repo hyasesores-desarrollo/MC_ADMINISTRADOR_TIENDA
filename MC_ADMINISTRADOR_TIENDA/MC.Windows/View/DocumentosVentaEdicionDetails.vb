@@ -175,7 +175,7 @@ Public Class DocumentosVentaEdicionDetails
         DocumentoVentaBE.NumeroDocumentoNew = lblNumero.Text
         DocumentoVentaBE.Total = txtImporteTotal.Text
          DocumentoVentaBE.FechaEmision = lblFecha.Text
-        If (ParametroDAO.Validar_NumeroDocumentoNew(DocumentoVentaBE.NumeroDocumentoNew) > 0) Then
+        If (ParametroDAO.Validar_NumeroDocumentoNew(DocumentoVentaBE.NumeroDocumentoNew) > 0 And DocumentoVentaDAO.tDocumento <> DocumentoVentaBE.NumeroDocumentoNew.ToString) Then
             Result = False
         End If
 
@@ -190,6 +190,7 @@ Public Class DocumentosVentaEdicionDetails
                     detalle_documento_totales = DocumentoVentaDAO.SaveDetalle(DocumentoVentaDAO.tDocumento, GridView1.GetRowCellValue(i, "tCodigoProducto").ToString, GridView1.GetRowCellValue(i, "nVenta").ToString, ParametroDAO.GetImpuesto2_por_producto(GridView1.GetRowCellValue(i, "tCodigoProducto").ToString, GridView1.GetRowCellValue(i, "tCodigoPedido").ToString))
                 Next i
                 DocumentoVentaDAO.Save(DocumentoVentaBE, detalle_documento_totales)
+
 
                 'Elimina el documento en la replicada si es que el documento es nuevo
                 If (DocumentoVentaBE.NumeroDocumento <> DocumentoVentaBE.NumeroDocumentoNew And IdLocal > 0) Then

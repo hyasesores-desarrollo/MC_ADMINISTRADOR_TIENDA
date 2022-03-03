@@ -23,7 +23,7 @@ Partial Class ClienteFidelizadoList
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btnNuevo = New DevExpress.XtraBars.BarButtonItem()
         Me.btnEditar = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnRefrescar = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnRefresh = New DevExpress.XtraBars.BarButtonItem()
         Me.btnCerrar = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -38,7 +38,7 @@ Partial Class ClienteFidelizadoList
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnNuevo, Me.btnEditar, Me.btnRefrescar, Me.btnCerrar})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnNuevo, Me.btnEditar, Me.btnRefresh, Me.btnCerrar})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl.MaxItemId = 5
         Me.RibbonControl.Name = "RibbonControl"
@@ -62,13 +62,13 @@ Partial Class ClienteFidelizadoList
         Me.btnEditar.LargeGlyph = CType(resources.GetObject("btnEditar.LargeGlyph"), System.Drawing.Image)
         Me.btnEditar.Name = "btnEditar"
         '
-        'btnRefrescar
+        'btnRefresh
         '
-        Me.btnRefrescar.Caption = "Refrescar"
-        Me.btnRefrescar.Glyph = CType(resources.GetObject("btnRefrescar.Glyph"), System.Drawing.Image)
-        Me.btnRefrescar.Id = 3
-        Me.btnRefrescar.LargeGlyph = CType(resources.GetObject("btnRefrescar.LargeGlyph"), System.Drawing.Image)
-        Me.btnRefrescar.Name = "btnRefrescar"
+        Me.btnRefresh.Caption = "Refrescar"
+        Me.btnRefresh.Glyph = CType(resources.GetObject("btnRefresh.Glyph"), System.Drawing.Image)
+        Me.btnRefresh.Id = 3
+        Me.btnRefresh.LargeGlyph = CType(resources.GetObject("btnRefresh.LargeGlyph"), System.Drawing.Image)
+        Me.btnRefresh.Name = "btnRefresh"
         '
         'btnCerrar
         '
@@ -88,7 +88,7 @@ Partial Class ClienteFidelizadoList
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnNuevo)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnEditar)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.btnRefrescar)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.btnRefresh)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnCerrar, True)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "Opciones"
@@ -144,7 +144,7 @@ Partial Class ClienteFidelizadoList
     Friend WithEvents RibbonStatusBar As DevExpress.XtraBars.Ribbon.RibbonStatusBar
     Friend WithEvents btnNuevo As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnEditar As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnRefrescar As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnRefresh As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnCerrar As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
