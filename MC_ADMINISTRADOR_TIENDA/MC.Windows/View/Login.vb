@@ -8,7 +8,7 @@ Public Class Login
     Public Sub New()
 
         Dim ClienteFidelizadoDAO = New ClienteFidelizadoDAO()
-        Dim cliente = New MC_clientes()
+        Dim cliente = New MC_clientesBE()
         cliente.IdCliente = 2
         cliente.IdTipoIdentidad = 7
         cliente.NumeroDocumento = 47163511

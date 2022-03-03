@@ -73,12 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BE\MC_clientes.vb" />
+    <Compile Include="BE\MC_clientesBE.vb" />
     <Compile Include="BE\DocumentoBE.vb" />
     <Compile Include="BE\DocumentoProcesadoBE.vb" />
     <Compile Include="BE\DocumentoVentaBE.vb" />
     <Compile Include="BE\LocalBE.vb" />
-    <Compile Include="BE\MC_cliente_detalle.vb" />
+    <Compile Include="BE\MC_cliente_detalleBE.vb" />
     <Compile Include="BE\MC_ubigeo.vb" />
     <Compile Include="BE\MotorizadoBE.vb" />
     <Compile Include="BE\MozoBE.vb" />

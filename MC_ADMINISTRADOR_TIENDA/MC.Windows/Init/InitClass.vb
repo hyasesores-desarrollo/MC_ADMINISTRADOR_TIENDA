@@ -49,6 +49,7 @@ Module InitClass
     Public IPServerCentral As String = "192.168.6.97"
     Public BdCodigoEntel As String = "BD_CODIGO_ENTEL"
     Public BdCentral As String = "MC_CENTRAL"
+    Public BdVentas As String = "MC_VENTAS"
     Public BdMarcacionLocal As String = "MC_MARCACION"
     Public bsGrilla As New DataTable
 

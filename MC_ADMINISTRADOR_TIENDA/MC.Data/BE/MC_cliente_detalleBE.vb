@@ -1,4 +1,4 @@
-﻿Public Class MC_cliente_detalle
+﻿Public Class MC_cliente_detalleBE
 
 
     Public Property IdClienteDetalle As Integer
