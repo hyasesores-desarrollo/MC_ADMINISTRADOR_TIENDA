@@ -28,31 +28,9 @@ Partial Class ClienteFidelizadoEdit
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.Datos = New DevExpress.XtraTab.XtraTabPage()
-        Me.cboAprobacion = New DevExpress.XtraEditors.SearchLookUpEdit()
-        Me.GridViewTipoComision = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtNumeroDocumento = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.chkActivo = New DevExpress.XtraEditors.CheckEdit()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtApellidoPaterno = New DevExpress.XtraEditors.TextEdit()
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.btnValidacionReniec = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnAdjuntarImagen = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnVerImagen = New DevExpress.XtraEditors.SimpleButton()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtNombre = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtApellidoMaterno = New DevExpress.XtraEditors.TextEdit()
-        Me.dtFechaNacimiento = New DevExpress.XtraEditors.DateEdit()
-        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtNombrePreferido = New DevExpress.XtraEditors.TextEdit()
+        Me.txtidCliente = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.txtUbigeo = New DevExpress.XtraEditors.TextEdit()
         Me.txtDireccion = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
@@ -61,43 +39,66 @@ Partial Class ClienteFidelizadoEdit
         Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
         Me.txtTelefono = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl()
-        Me.cboTipoDocumento = New DevExpress.XtraEditors.GridLookUpEdit()
-        Me.GridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.cboGenero = New DevExpress.XtraEditors.GridLookUpEdit()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.cboDistrito = New DevExpress.XtraEditors.GridLookUpEdit()
         Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.txtUbigeo = New DevExpress.XtraEditors.TextEdit()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtApellidoMaterno = New DevExpress.XtraEditors.TextEdit()
+        Me.txtNombrePreferido = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.dtFechaNacimiento = New DevExpress.XtraEditors.DateEdit()
+        Me.txtNombre = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtApellidoPaterno = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.cboGenero = New DevExpress.XtraEditors.GridLookUpEdit()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.btnVerImagen = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnAdjuntarImagen = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnValidacionReniec = New DevExpress.XtraEditors.SimpleButton()
+        Me.cboAprobacion = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.GridViewTipoComision = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtNumeroDocumento = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.chkActivo = New DevExpress.XtraEditors.CheckEdit()
+        Me.cboTipoDocumento = New DevExpress.XtraEditors.GridLookUpEdit()
+        Me.GridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControl1.SuspendLayout()
         Me.Datos.SuspendLayout()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl2.SuspendLayout()
+        CType(Me.txtUbigeo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtDireccion.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtCorreo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTelefono.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cboDistrito.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.txtApellidoMaterno.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtNombrePreferido.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtFechaNacimiento.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtFechaNacimiento.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtNombre.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtApellidoPaterno.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cboGenero.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboAprobacion.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewTipoComision, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNumeroDocumento.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkActivo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtApellidoPaterno.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
-        CType(Me.txtNombre.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtApellidoMaterno.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtFechaNacimiento.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtFechaNacimiento.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtNombrePreferido.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl2.SuspendLayout()
-        CType(Me.txtDireccion.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtCorreo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtTelefono.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboTipoDocumento.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboGenero.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboDistrito.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtUbigeo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl
@@ -159,6 +160,7 @@ Partial Class ClienteFidelizadoEdit
         '
         'Datos
         '
+        Me.Datos.Controls.Add(Me.txtidCliente)
         Me.Datos.Controls.Add(Me.GroupControl2)
         Me.Datos.Controls.Add(Me.GroupControl1)
         Me.Datos.Controls.Add(Me.btnVerImagen)
@@ -174,6 +176,311 @@ Partial Class ClienteFidelizadoEdit
         Me.Datos.Name = "Datos"
         Me.Datos.Size = New System.Drawing.Size(945, 318)
         Me.Datos.Text = "Datos"
+        '
+        'txtidCliente
+        '
+        Me.txtidCliente.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtidCliente.Appearance.Options.UseFont = True
+        Me.txtidCliente.Location = New System.Drawing.Point(547, 13)
+        Me.txtidCliente.Name = "txtidCliente"
+        Me.txtidCliente.Size = New System.Drawing.Size(22, 14)
+        Me.txtidCliente.TabIndex = 146
+        Me.txtidCliente.Text = "N°: "
+        '
+        'GroupControl2
+        '
+        Me.GroupControl2.Controls.Add(Me.txtUbigeo)
+        Me.GroupControl2.Controls.Add(Me.txtDireccion)
+        Me.GroupControl2.Controls.Add(Me.LabelControl10)
+        Me.GroupControl2.Controls.Add(Me.LabelControl12)
+        Me.GroupControl2.Controls.Add(Me.txtCorreo)
+        Me.GroupControl2.Controls.Add(Me.LabelControl13)
+        Me.GroupControl2.Controls.Add(Me.LabelControl14)
+        Me.GroupControl2.Controls.Add(Me.txtTelefono)
+        Me.GroupControl2.Controls.Add(Me.LabelControl15)
+        Me.GroupControl2.Controls.Add(Me.cboDistrito)
+        Me.GroupControl2.Location = New System.Drawing.Point(5, 200)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(930, 111)
+        Me.GroupControl2.TabIndex = 145
+        Me.GroupControl2.Text = "Datos Adicionales"
+        '
+        'txtUbigeo
+        '
+        Me.txtUbigeo.Enabled = False
+        Me.txtUbigeo.Location = New System.Drawing.Point(542, 57)
+        Me.txtUbigeo.MenuManager = Me.RibbonControl
+        Me.txtUbigeo.Name = "txtUbigeo"
+        Me.txtUbigeo.Properties.MaxLength = 10
+        Me.txtUbigeo.Size = New System.Drawing.Size(239, 20)
+        Me.txtUbigeo.TabIndex = 143
+        '
+        'txtDireccion
+        '
+        Me.txtDireccion.Location = New System.Drawing.Point(140, 83)
+        Me.txtDireccion.MenuManager = Me.RibbonControl
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.Properties.MaxLength = 500
+        Me.txtDireccion.Size = New System.Drawing.Size(641, 20)
+        Me.txtDireccion.TabIndex = 141
+        '
+        'LabelControl10
+        '
+        Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl10.Appearance.Options.UseFont = True
+        Me.LabelControl10.Location = New System.Drawing.Point(17, 85)
+        Me.LabelControl10.Name = "LabelControl10"
+        Me.LabelControl10.Size = New System.Drawing.Size(49, 14)
+        Me.LabelControl10.TabIndex = 140
+        Me.LabelControl10.Text = "Dirección"
+        '
+        'LabelControl12
+        '
+        Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl12.Appearance.Options.UseFont = True
+        Me.LabelControl12.Location = New System.Drawing.Point(17, 59)
+        Me.LabelControl12.Name = "LabelControl12"
+        Me.LabelControl12.Size = New System.Drawing.Size(38, 14)
+        Me.LabelControl12.TabIndex = 136
+        Me.LabelControl12.Text = "Distrito"
+        '
+        'txtCorreo
+        '
+        Me.txtCorreo.Location = New System.Drawing.Point(140, 31)
+        Me.txtCorreo.MenuManager = Me.RibbonControl
+        Me.txtCorreo.Name = "txtCorreo"
+        Me.txtCorreo.Properties.MaxLength = 150
+        Me.txtCorreo.Size = New System.Drawing.Size(239, 20)
+        Me.txtCorreo.TabIndex = 135
+        '
+        'LabelControl13
+        '
+        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl13.Appearance.Options.UseFont = True
+        Me.LabelControl13.Location = New System.Drawing.Point(17, 34)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Size = New System.Drawing.Size(36, 14)
+        Me.LabelControl13.TabIndex = 134
+        Me.LabelControl13.Text = "Correo"
+        '
+        'LabelControl14
+        '
+        Me.LabelControl14.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl14.Appearance.Options.UseFont = True
+        Me.LabelControl14.Location = New System.Drawing.Point(419, 34)
+        Me.LabelControl14.Name = "LabelControl14"
+        Me.LabelControl14.Size = New System.Drawing.Size(49, 14)
+        Me.LabelControl14.TabIndex = 1
+        Me.LabelControl14.Text = "Teléfono"
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.Location = New System.Drawing.Point(542, 31)
+        Me.txtTelefono.MenuManager = Me.RibbonControl
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Properties.MaxLength = 50
+        Me.txtTelefono.Size = New System.Drawing.Size(239, 20)
+        Me.txtTelefono.TabIndex = 0
+        '
+        'LabelControl15
+        '
+        Me.LabelControl15.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl15.Appearance.Options.UseFont = True
+        Me.LabelControl15.Location = New System.Drawing.Point(419, 59)
+        Me.LabelControl15.Name = "LabelControl15"
+        Me.LabelControl15.Size = New System.Drawing.Size(59, 14)
+        Me.LabelControl15.TabIndex = 17
+        Me.LabelControl15.Text = "Ubigeo (*)"
+        '
+        'cboDistrito
+        '
+        Me.cboDistrito.EditValue = "[Vacio]"
+        Me.cboDistrito.Location = New System.Drawing.Point(140, 57)
+        Me.cboDistrito.MenuManager = Me.RibbonControl
+        Me.cboDistrito.Name = "cboDistrito"
+        Me.cboDistrito.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cboDistrito.Properties.View = Me.GridView5
+        Me.cboDistrito.Size = New System.Drawing.Size(239, 20)
+        Me.cboDistrito.TabIndex = 142
+        '
+        'GridView5
+        '
+        Me.GridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.GridView5.Name = "GridView5"
+        Me.GridView5.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView5.OptionsView.ShowAutoFilterRow = True
+        Me.GridView5.OptionsView.ShowGroupPanel = False
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.LabelControl3)
+        Me.GroupControl1.Controls.Add(Me.txtApellidoMaterno)
+        Me.GroupControl1.Controls.Add(Me.txtNombrePreferido)
+        Me.GroupControl1.Controls.Add(Me.LabelControl9)
+        Me.GroupControl1.Controls.Add(Me.LabelControl5)
+        Me.GroupControl1.Controls.Add(Me.dtFechaNacimiento)
+        Me.GroupControl1.Controls.Add(Me.txtNombre)
+        Me.GroupControl1.Controls.Add(Me.LabelControl2)
+        Me.GroupControl1.Controls.Add(Me.LabelControl1)
+        Me.GroupControl1.Controls.Add(Me.txtApellidoPaterno)
+        Me.GroupControl1.Controls.Add(Me.LabelControl7)
+        Me.GroupControl1.Controls.Add(Me.cboGenero)
+        Me.GroupControl1.Location = New System.Drawing.Point(5, 81)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(930, 113)
+        Me.GroupControl1.TabIndex = 144
+        Me.GroupControl1.Text = "Datos Reniec"
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Appearance.Options.UseFont = True
+        Me.LabelControl3.Location = New System.Drawing.Point(17, 60)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(112, 14)
+        Me.LabelControl3.TabIndex = 143
+        Me.LabelControl3.Text = "Apellido Materno (*)"
+        '
+        'txtApellidoMaterno
+        '
+        Me.txtApellidoMaterno.Location = New System.Drawing.Point(140, 57)
+        Me.txtApellidoMaterno.MenuManager = Me.RibbonControl
+        Me.txtApellidoMaterno.Name = "txtApellidoMaterno"
+        Me.txtApellidoMaterno.Properties.MaxLength = 50
+        Me.txtApellidoMaterno.Size = New System.Drawing.Size(239, 20)
+        Me.txtApellidoMaterno.TabIndex = 142
+        '
+        'txtNombrePreferido
+        '
+        Me.txtNombrePreferido.Location = New System.Drawing.Point(542, 83)
+        Me.txtNombrePreferido.MenuManager = Me.RibbonControl
+        Me.txtNombrePreferido.Name = "txtNombrePreferido"
+        Me.txtNombrePreferido.Properties.MaxLength = 50
+        Me.txtNombrePreferido.Size = New System.Drawing.Size(239, 20)
+        Me.txtNombrePreferido.TabIndex = 141
+        '
+        'LabelControl9
+        '
+        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl9.Appearance.Options.UseFont = True
+        Me.LabelControl9.Location = New System.Drawing.Point(419, 85)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(117, 14)
+        Me.LabelControl9.TabIndex = 140
+        Me.LabelControl9.Text = "Nombre Preferido (*)"
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Appearance.Options.UseFont = True
+        Me.LabelControl5.Location = New System.Drawing.Point(17, 86)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(61, 14)
+        Me.LabelControl5.TabIndex = 139
+        Me.LabelControl5.Text = "Género (*)"
+        '
+        'dtFechaNacimiento
+        '
+        Me.dtFechaNacimiento.EditValue = Nothing
+        Me.dtFechaNacimiento.Location = New System.Drawing.Point(542, 57)
+        Me.dtFechaNacimiento.MenuManager = Me.RibbonControl
+        Me.dtFechaNacimiento.Name = "dtFechaNacimiento"
+        Me.dtFechaNacimiento.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dtFechaNacimiento.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dtFechaNacimiento.Size = New System.Drawing.Size(239, 20)
+        Me.dtFechaNacimiento.TabIndex = 138
+        '
+        'txtNombre
+        '
+        Me.txtNombre.Location = New System.Drawing.Point(140, 31)
+        Me.txtNombre.MenuManager = Me.RibbonControl
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Properties.MaxLength = 50
+        Me.txtNombre.Size = New System.Drawing.Size(239, 20)
+        Me.txtNombre.TabIndex = 135
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Appearance.Options.UseFont = True
+        Me.LabelControl2.Location = New System.Drawing.Point(17, 34)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(64, 14)
+        Me.LabelControl2.TabIndex = 134
+        Me.LabelControl2.Text = "Nombre (*)"
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Appearance.Options.UseFont = True
+        Me.LabelControl1.Location = New System.Drawing.Point(419, 34)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(110, 14)
+        Me.LabelControl1.TabIndex = 1
+        Me.LabelControl1.Text = "Apellido Paterno (*)"
+        '
+        'txtApellidoPaterno
+        '
+        Me.txtApellidoPaterno.Location = New System.Drawing.Point(542, 31)
+        Me.txtApellidoPaterno.MenuManager = Me.RibbonControl
+        Me.txtApellidoPaterno.Name = "txtApellidoPaterno"
+        Me.txtApellidoPaterno.Properties.MaxLength = 50
+        Me.txtApellidoPaterno.Size = New System.Drawing.Size(239, 20)
+        Me.txtApellidoPaterno.TabIndex = 0
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Appearance.Options.UseFont = True
+        Me.LabelControl7.Location = New System.Drawing.Point(419, 59)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(117, 14)
+        Me.LabelControl7.TabIndex = 17
+        Me.LabelControl7.Text = "Fecha Nacimiento (*)"
+        '
+        'cboGenero
+        '
+        Me.cboGenero.EditValue = ""
+        Me.cboGenero.Location = New System.Drawing.Point(140, 84)
+        Me.cboGenero.MenuManager = Me.RibbonControl
+        Me.cboGenero.Name = "cboGenero"
+        Me.cboGenero.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cboGenero.Properties.View = Me.GridView1
+        Me.cboGenero.Size = New System.Drawing.Size(127, 20)
+        Me.cboGenero.TabIndex = 18
+        '
+        'GridView1
+        '
+        Me.GridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        '
+        'btnVerImagen
+        '
+        Me.btnVerImagen.Image = CType(resources.GetObject("btnVerImagen.Image"), System.Drawing.Image)
+        Me.btnVerImagen.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.btnVerImagen.Location = New System.Drawing.Point(891, 21)
+        Me.btnVerImagen.Name = "btnVerImagen"
+        Me.btnVerImagen.Size = New System.Drawing.Size(44, 43)
+        Me.btnVerImagen.TabIndex = 143
+        '
+        'btnAdjuntarImagen
+        '
+        Me.btnAdjuntarImagen.Image = CType(resources.GetObject("btnAdjuntarImagen.Image"), System.Drawing.Image)
+        Me.btnAdjuntarImagen.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.btnAdjuntarImagen.Location = New System.Drawing.Point(841, 22)
+        Me.btnAdjuntarImagen.Name = "btnAdjuntarImagen"
+        Me.btnAdjuntarImagen.Size = New System.Drawing.Size(44, 43)
+        Me.btnAdjuntarImagen.TabIndex = 142
+        '
+        'btnValidacionReniec
+        '
+        Me.btnValidacionReniec.Location = New System.Drawing.Point(407, 10)
+        Me.btnValidacionReniec.Name = "btnValidacionReniec"
+        Me.btnValidacionReniec.Size = New System.Drawing.Size(127, 43)
+        Me.btnValidacionReniec.TabIndex = 141
+        Me.btnValidacionReniec.Text = "Validación RENIEC"
         '
         'cboAprobacion
         '
@@ -231,16 +538,6 @@ Partial Class ClienteFidelizadoEdit
         Me.LabelControl6.TabIndex = 133
         Me.LabelControl6.Text = "Número Documento"
         '
-        'LabelControl7
-        '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Appearance.Options.UseFont = True
-        Me.LabelControl7.Location = New System.Drawing.Point(419, 59)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(117, 14)
-        Me.LabelControl7.TabIndex = 17
-        Me.LabelControl7.Text = "Fecha Nacimiento (*)"
-        '
         'chkActivo
         '
         Me.chkActivo.Location = New System.Drawing.Point(748, 9)
@@ -251,260 +548,6 @@ Partial Class ClienteFidelizadoEdit
         Me.chkActivo.Properties.Caption = "Activo"
         Me.chkActivo.Size = New System.Drawing.Size(75, 19)
         Me.chkActivo.TabIndex = 13
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Appearance.Options.UseFont = True
-        Me.LabelControl1.Location = New System.Drawing.Point(419, 34)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(110, 14)
-        Me.LabelControl1.TabIndex = 1
-        Me.LabelControl1.Text = "Apellido Paterno (*)"
-        '
-        'txtApellidoPaterno
-        '
-        Me.txtApellidoPaterno.Location = New System.Drawing.Point(542, 31)
-        Me.txtApellidoPaterno.MenuManager = Me.RibbonControl
-        Me.txtApellidoPaterno.Name = "txtApellidoPaterno"
-        Me.txtApellidoPaterno.Properties.MaxLength = 10
-        Me.txtApellidoPaterno.Size = New System.Drawing.Size(239, 20)
-        Me.txtApellidoPaterno.TabIndex = 0
-        '
-        'GridControl1
-        '
-        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(0, 489)
-        Me.GridControl1.MainView = Me.GridView2
-        Me.GridControl1.MenuManager = Me.RibbonControl
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(951, 270)
-        Me.GridControl1.TabIndex = 7
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
-        '
-        'GridView2
-        '
-        Me.GridView2.GridControl = Me.GridControl1
-        Me.GridView2.Name = "GridView2"
-        '
-        'btnValidacionReniec
-        '
-        Me.btnValidacionReniec.Location = New System.Drawing.Point(407, 10)
-        Me.btnValidacionReniec.Name = "btnValidacionReniec"
-        Me.btnValidacionReniec.Size = New System.Drawing.Size(127, 43)
-        Me.btnValidacionReniec.TabIndex = 141
-        Me.btnValidacionReniec.Text = "Validación RENIEC"
-        '
-        'btnAdjuntarImagen
-        '
-        Me.btnAdjuntarImagen.Image = CType(resources.GetObject("btnAdjuntarImagen.Image"), System.Drawing.Image)
-        Me.btnAdjuntarImagen.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
-        Me.btnAdjuntarImagen.Location = New System.Drawing.Point(841, 22)
-        Me.btnAdjuntarImagen.Name = "btnAdjuntarImagen"
-        Me.btnAdjuntarImagen.Size = New System.Drawing.Size(44, 43)
-        Me.btnAdjuntarImagen.TabIndex = 142
-        '
-        'btnVerImagen
-        '
-        Me.btnVerImagen.Image = CType(resources.GetObject("btnVerImagen.Image"), System.Drawing.Image)
-        Me.btnVerImagen.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
-        Me.btnVerImagen.Location = New System.Drawing.Point(891, 21)
-        Me.btnVerImagen.Name = "btnVerImagen"
-        Me.btnVerImagen.Size = New System.Drawing.Size(44, 43)
-        Me.btnVerImagen.TabIndex = 143
-        '
-        'GroupControl1
-        '
-        Me.GroupControl1.Controls.Add(Me.txtNombrePreferido)
-        Me.GroupControl1.Controls.Add(Me.LabelControl9)
-        Me.GroupControl1.Controls.Add(Me.LabelControl5)
-        Me.GroupControl1.Controls.Add(Me.dtFechaNacimiento)
-        Me.GroupControl1.Controls.Add(Me.txtApellidoMaterno)
-        Me.GroupControl1.Controls.Add(Me.LabelControl3)
-        Me.GroupControl1.Controls.Add(Me.txtNombre)
-        Me.GroupControl1.Controls.Add(Me.LabelControl2)
-        Me.GroupControl1.Controls.Add(Me.LabelControl1)
-        Me.GroupControl1.Controls.Add(Me.txtApellidoPaterno)
-        Me.GroupControl1.Controls.Add(Me.LabelControl7)
-        Me.GroupControl1.Controls.Add(Me.cboGenero)
-        Me.GroupControl1.Location = New System.Drawing.Point(5, 81)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(930, 113)
-        Me.GroupControl1.TabIndex = 144
-        Me.GroupControl1.Text = "Datos Reniec"
-        '
-        'LabelControl2
-        '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Appearance.Options.UseFont = True
-        Me.LabelControl2.Location = New System.Drawing.Point(17, 34)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(64, 14)
-        Me.LabelControl2.TabIndex = 134
-        Me.LabelControl2.Text = "Nombre (*)"
-        '
-        'txtNombre
-        '
-        Me.txtNombre.Location = New System.Drawing.Point(140, 31)
-        Me.txtNombre.MenuManager = Me.RibbonControl
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Properties.MaxLength = 25
-        Me.txtNombre.Size = New System.Drawing.Size(239, 20)
-        Me.txtNombre.TabIndex = 135
-        '
-        'LabelControl3
-        '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Appearance.Options.UseFont = True
-        Me.LabelControl3.Location = New System.Drawing.Point(17, 59)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(112, 14)
-        Me.LabelControl3.TabIndex = 136
-        Me.LabelControl3.Text = "Apellido Materno (*)"
-        '
-        'txtApellidoMaterno
-        '
-        Me.txtApellidoMaterno.Location = New System.Drawing.Point(140, 57)
-        Me.txtApellidoMaterno.MenuManager = Me.RibbonControl
-        Me.txtApellidoMaterno.Name = "txtApellidoMaterno"
-        Me.txtApellidoMaterno.Properties.MaxLength = 10
-        Me.txtApellidoMaterno.Size = New System.Drawing.Size(239, 20)
-        Me.txtApellidoMaterno.TabIndex = 137
-        '
-        'dtFechaNacimiento
-        '
-        Me.dtFechaNacimiento.EditValue = Nothing
-        Me.dtFechaNacimiento.Location = New System.Drawing.Point(542, 57)
-        Me.dtFechaNacimiento.MenuManager = Me.RibbonControl
-        Me.dtFechaNacimiento.Name = "dtFechaNacimiento"
-        Me.dtFechaNacimiento.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtFechaNacimiento.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtFechaNacimiento.Size = New System.Drawing.Size(127, 20)
-        Me.dtFechaNacimiento.TabIndex = 138
-        '
-        'LabelControl5
-        '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Appearance.Options.UseFont = True
-        Me.LabelControl5.Location = New System.Drawing.Point(419, 85)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(61, 14)
-        Me.LabelControl5.TabIndex = 139
-        Me.LabelControl5.Text = "Género (*)"
-        '
-        'LabelControl9
-        '
-        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Appearance.Options.UseFont = True
-        Me.LabelControl9.Location = New System.Drawing.Point(17, 85)
-        Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(117, 14)
-        Me.LabelControl9.TabIndex = 140
-        Me.LabelControl9.Text = "Nombre Preferido (*)"
-        '
-        'txtNombrePreferido
-        '
-        Me.txtNombrePreferido.Location = New System.Drawing.Point(140, 83)
-        Me.txtNombrePreferido.MenuManager = Me.RibbonControl
-        Me.txtNombrePreferido.Name = "txtNombrePreferido"
-        Me.txtNombrePreferido.Properties.MaxLength = 10
-        Me.txtNombrePreferido.Size = New System.Drawing.Size(239, 20)
-        Me.txtNombrePreferido.TabIndex = 141
-        '
-        'GroupControl2
-        '
-        Me.GroupControl2.Controls.Add(Me.txtUbigeo)
-        Me.GroupControl2.Controls.Add(Me.txtDireccion)
-        Me.GroupControl2.Controls.Add(Me.LabelControl10)
-        Me.GroupControl2.Controls.Add(Me.LabelControl12)
-        Me.GroupControl2.Controls.Add(Me.txtCorreo)
-        Me.GroupControl2.Controls.Add(Me.LabelControl13)
-        Me.GroupControl2.Controls.Add(Me.LabelControl14)
-        Me.GroupControl2.Controls.Add(Me.txtTelefono)
-        Me.GroupControl2.Controls.Add(Me.LabelControl15)
-        Me.GroupControl2.Controls.Add(Me.cboDistrito)
-        Me.GroupControl2.Location = New System.Drawing.Point(5, 200)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(930, 111)
-        Me.GroupControl2.TabIndex = 145
-        Me.GroupControl2.Text = "Datos Adicionales"
-        '
-        'txtDireccion
-        '
-        Me.txtDireccion.Location = New System.Drawing.Point(140, 83)
-        Me.txtDireccion.MenuManager = Me.RibbonControl
-        Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Properties.MaxLength = 10
-        Me.txtDireccion.Size = New System.Drawing.Size(641, 20)
-        Me.txtDireccion.TabIndex = 141
-        '
-        'LabelControl10
-        '
-        Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl10.Appearance.Options.UseFont = True
-        Me.LabelControl10.Location = New System.Drawing.Point(17, 85)
-        Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(49, 14)
-        Me.LabelControl10.TabIndex = 140
-        Me.LabelControl10.Text = "Dirección"
-        '
-        'LabelControl12
-        '
-        Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl12.Appearance.Options.UseFont = True
-        Me.LabelControl12.Location = New System.Drawing.Point(17, 59)
-        Me.LabelControl12.Name = "LabelControl12"
-        Me.LabelControl12.Size = New System.Drawing.Size(38, 14)
-        Me.LabelControl12.TabIndex = 136
-        Me.LabelControl12.Text = "Distrito"
-        '
-        'txtCorreo
-        '
-        Me.txtCorreo.Location = New System.Drawing.Point(140, 31)
-        Me.txtCorreo.MenuManager = Me.RibbonControl
-        Me.txtCorreo.Name = "txtCorreo"
-        Me.txtCorreo.Properties.MaxLength = 25
-        Me.txtCorreo.Size = New System.Drawing.Size(239, 20)
-        Me.txtCorreo.TabIndex = 135
-        '
-        'LabelControl13
-        '
-        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl13.Appearance.Options.UseFont = True
-        Me.LabelControl13.Location = New System.Drawing.Point(17, 34)
-        Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(36, 14)
-        Me.LabelControl13.TabIndex = 134
-        Me.LabelControl13.Text = "Correo"
-        '
-        'LabelControl14
-        '
-        Me.LabelControl14.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl14.Appearance.Options.UseFont = True
-        Me.LabelControl14.Location = New System.Drawing.Point(419, 34)
-        Me.LabelControl14.Name = "LabelControl14"
-        Me.LabelControl14.Size = New System.Drawing.Size(49, 14)
-        Me.LabelControl14.TabIndex = 1
-        Me.LabelControl14.Text = "Teléfono"
-        '
-        'txtTelefono
-        '
-        Me.txtTelefono.Location = New System.Drawing.Point(542, 31)
-        Me.txtTelefono.MenuManager = Me.RibbonControl
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Properties.MaxLength = 10
-        Me.txtTelefono.Size = New System.Drawing.Size(239, 20)
-        Me.txtTelefono.TabIndex = 0
-        '
-        'LabelControl15
-        '
-        Me.LabelControl15.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl15.Appearance.Options.UseFont = True
-        Me.LabelControl15.Location = New System.Drawing.Point(419, 59)
-        Me.LabelControl15.Name = "LabelControl15"
-        Me.LabelControl15.Size = New System.Drawing.Size(59, 14)
-        Me.LabelControl15.TabIndex = 17
-        Me.LabelControl15.Text = "Ubigeo (*)"
         '
         'cboTipoDocumento
         '
@@ -524,50 +567,21 @@ Partial Class ClienteFidelizadoEdit
         Me.GridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = False
         Me.GridLookUpEdit1View.OptionsView.ShowGroupPanel = False
         '
-        'cboGenero
+        'GridControl1
         '
-        Me.cboGenero.EditValue = "[Vacio]"
-        Me.cboGenero.Location = New System.Drawing.Point(542, 83)
-        Me.cboGenero.MenuManager = Me.RibbonControl
-        Me.cboGenero.Name = "cboGenero"
-        Me.cboGenero.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cboGenero.Properties.View = Me.GridView1
-        Me.cboGenero.Size = New System.Drawing.Size(127, 20)
-        Me.cboGenero.TabIndex = 18
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(0, 489)
+        Me.GridControl1.MainView = Me.GridView2
+        Me.GridControl1.MenuManager = Me.RibbonControl
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(951, 270)
+        Me.GridControl1.TabIndex = 7
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
-        'GridView1
+        'GridView2
         '
-        Me.GridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView1.OptionsView.ShowGroupPanel = False
-        '
-        'cboDistrito
-        '
-        Me.cboDistrito.EditValue = "[Vacio]"
-        Me.cboDistrito.Location = New System.Drawing.Point(140, 57)
-        Me.cboDistrito.MenuManager = Me.RibbonControl
-        Me.cboDistrito.Name = "cboDistrito"
-        Me.cboDistrito.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cboDistrito.Properties.View = Me.GridView5
-        Me.cboDistrito.Size = New System.Drawing.Size(239, 20)
-        Me.cboDistrito.TabIndex = 142
-        '
-        'GridView5
-        '
-        Me.GridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.GridView5.Name = "GridView5"
-        Me.GridView5.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView5.OptionsView.ShowGroupPanel = False
-        '
-        'txtUbigeo
-        '
-        Me.txtUbigeo.Location = New System.Drawing.Point(542, 57)
-        Me.txtUbigeo.MenuManager = Me.RibbonControl
-        Me.txtUbigeo.Name = "txtUbigeo"
-        Me.txtUbigeo.Properties.MaxLength = 10
-        Me.txtUbigeo.Size = New System.Drawing.Size(239, 20)
-        Me.txtUbigeo.TabIndex = 143
+        Me.GridView2.GridControl = Me.GridControl1
+        Me.GridView2.Name = "GridView2"
         '
         'ClienteFidelizadoEdit
         '
@@ -588,34 +602,34 @@ Partial Class ClienteFidelizadoEdit
         Me.XtraTabControl1.ResumeLayout(False)
         Me.Datos.ResumeLayout(False)
         Me.Datos.PerformLayout()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl2.ResumeLayout(False)
+        Me.GroupControl2.PerformLayout()
+        CType(Me.txtUbigeo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtDireccion.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtCorreo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTelefono.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cboDistrito.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
+        CType(Me.txtApellidoMaterno.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtNombrePreferido.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtFechaNacimiento.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtFechaNacimiento.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtNombre.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtApellidoPaterno.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cboGenero.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboAprobacion.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewTipoComision, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNumeroDocumento.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkActivo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtApellidoPaterno.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl1.ResumeLayout(False)
-        Me.GroupControl1.PerformLayout()
-        CType(Me.txtNombre.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtApellidoMaterno.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtFechaNacimiento.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtFechaNacimiento.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtNombrePreferido.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl2.ResumeLayout(False)
-        Me.GroupControl2.PerformLayout()
-        CType(Me.txtDireccion.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtCorreo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtTelefono.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboTipoDocumento.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboGenero.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboDistrito.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtUbigeo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -648,8 +662,6 @@ Partial Class ClienteFidelizadoEdit
     Friend WithEvents txtNombre As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents dtFechaNacimiento As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents txtApellidoMaterno As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtNombrePreferido As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
@@ -669,4 +681,7 @@ Partial Class ClienteFidelizadoEdit
     Friend WithEvents cboTipoDocumento As DevExpress.XtraEditors.GridLookUpEdit
     Friend WithEvents GridLookUpEdit1View As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents txtUbigeo As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtidCliente As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtApellidoMaterno As DevExpress.XtraEditors.TextEdit
 End Class

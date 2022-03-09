@@ -27,8 +27,8 @@ Public Class ClienteFidelizadoList
 
         'Se configura el control GridView
         ControlesDevExpress.InitGridView(GridView1)
-        ControlesDevExpress.InitGridViewColumn(GridView1, "Código", "IdCliente", 70, False, ControlesDevExpress.eGridViewFormato.Ninguno, False)
-        ControlesDevExpress.InitGridViewColumn(GridView1, "Tipo Doc.", "IdTipoIdentidad", 50, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
+        ControlesDevExpress.InitGridViewColumn(GridView1, "Codigo", "IdCliente", 50, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
+        ControlesDevExpress.InitGridViewColumn(GridView1, "Tipo Doc.", "IdTipoIdentidad", 70, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
         ControlesDevExpress.InitGridViewColumn(GridView1, "Num. Doc.", "NumeroDocumento", 70, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
         ControlesDevExpress.InitGridViewColumn(GridView1, "Nombres", "Nombres", 100, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
         ControlesDevExpress.InitGridViewColumn(GridView1, "Apellidos", "Apellidos", 300, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
@@ -70,13 +70,13 @@ Public Class ClienteFidelizadoList
     End Sub
     Public Sub Nuevo()
         Try
+            ClienteFidelizadoDAO.IdCliente = 0
             Dim MiForm As New ClienteFidelizadoEdit
             MiForm.ShowDialog()
             Refrescar()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
     End Sub
     Public Sub Editar()
         Try

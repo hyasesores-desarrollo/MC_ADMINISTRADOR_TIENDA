@@ -6,33 +6,35 @@ Public Class Login
     Dim UsuarioBE As New UsuarioBE
 
     Public Sub New()
+        'Dim api = New APIReniec()
+        'Dim ResponseReniec As New ResponseReniec
+        'ResponseReniec = api.ValidateReniec("123")
+        'Dim ClienteFidelizadoDAO = New ClienteFidelizadoDAO()
+        'Dim cliente = New MC_clientesBE()
+        'cliente.IdCliente = 2
+        'cliente.IdTipoIdentidad = 7
+        'cliente.NumeroDocumento = 47163511
+        'cliente.Nombres = "Manuel"
+        'cliente.Apellidos = "Velásquez Pérez"
+        'cliente.NombrePreferido = "Manuman"
+        'cliente.Telefono = "993992048"
+        'cliente.Correo = "mvelasquez@hyasesores.pe"
+        'cliente.FechaNacimiento = "01-03-2022"
+        'cliente.IdGenero = 1
+        'cliente.IdDistrito = 11
+        'cliente.Ubigeo = "110105"
+        'cliente.Direccion = "Los cactuz 148 - chaclacayo"
+        'cliente.UrlConsentimiento = "www.url.com"
+        'cliente.Estado = True
+        'cliente.FechaRegistro = "01-03-2022"
+        'cliente.Puntos = 10
 
-        Dim ClienteFidelizadoDAO = New ClienteFidelizadoDAO()
-        Dim cliente = New MC_clientesBE()
-        cliente.IdCliente = 2
-        cliente.IdTipoIdentidad = 7
-        cliente.NumeroDocumento = 47163511
-        cliente.Nombres = "Manuel"
-        cliente.Apellidos = "Velásquez Pérez"
-        cliente.NombrePreferido = "Manuman"
-        cliente.Telefono = "993992048"
-        cliente.Correo = "mvelasquez@hyasesores.pe"
-        cliente.FechaNacimiento = "01-03-2022"
-        cliente.IdGenero = 1
-        cliente.IdDistrito = 11
-        cliente.Ubigeo = "110105"
-        cliente.Direccion = "Los cactuz 148 - chaclacayo"
-        cliente.UrlConsentimiento = "www.url.com"
-        cliente.Estado = True
-        cliente.FechaRegistro = "01-03-2022"
-        cliente.Puntos = 10
-
-        Dim result = ClienteFidelizadoDAO.GetallClienteFidelizado()
-        Dim result2 = ClienteFidelizadoDAO.GetbyidClienteFidelizado(1)
-        Dim result3 = ClienteFidelizadoDAO.GetbyidClienteFidelizadoDetalle(1)
-        Dim result4 = ClienteFidelizadoDAO.CreateClienteFidelizado(cliente)
-        Dim result5 = ClienteFidelizadoDAO.UpdateClienteFidelizado(cliente)
-        Dim result6 = ClienteFidelizadoDAO.DeleteClienteFidelizado(2)
+        'Dim result = ClienteFidelizadoDAO.GetallClienteFidelizado()
+        'Dim result2 = ClienteFidelizadoDAO.GetbyidClienteFidelizado(1)
+        'Dim result3 = ClienteFidelizadoDAO.GetbyidClienteFidelizadoDetalle(1)
+        'Dim result4 = ClienteFidelizadoDAO.CreateClienteFidelizado(cliente)
+        'Dim result5 = ClienteFidelizadoDAO.UpdateClienteFidelizado(cliente)
+        'Dim result6 = ClienteFidelizadoDAO.DeleteClienteFidelizado(2)
 
         'This call is required by the designer.
         InitializeComponent()

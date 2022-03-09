@@ -16,6 +16,7 @@ Public Class MotorizadoList
 
         'Se inicializa los controles
         Me.Text = "CONFIGURAR MOTORIZADO" & SistemaDAO.NombreLocal
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable
         Me.StartPosition = FormStartPosition.CenterScreen
         Me.Icon = DesktopMain.Icon
         Me.KeyPreview = False
@@ -129,7 +130,6 @@ Public Class MotorizadoList
 
     Public Sub Cerrar()
         DesktopMain.btnLocal.Enabled = True
-
         Me.Close()
     End Sub
 

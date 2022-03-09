@@ -53,7 +53,8 @@ Public Class ClienteFidelizadoDAO
                 .IdTipoIdentidad = dt.Rows(0).Item("IdTipoIdentidad")
                 .NumeroDocumento = dt.Rows(0).Item("NumeroDocumento")
                 .Nombres = dt.Rows(0).Item("Nombres")
-                .Apellidos = dt.Rows(0).Item("Apellidos")
+                .ApellidoMaterno = dt.Rows(0).Item("ApellidoMaterno")
+                .ApellidoPaterno = dt.Rows(0).Item("ApellidoPaterno")
                 .NombrePreferido = dt.Rows(0).Item("NombrePreferido")
                 .Telefono = dt.Rows(0).Item("Telefono")
                 .Correo = dt.Rows(0).Item("Correo")
@@ -67,9 +68,6 @@ Public Class ClienteFidelizadoDAO
                 .FechaRegistro = dt.Rows(0).Item("FechaRegistro")
                 .Puntos = dt.Rows(0).Item("Puntos")
             End With
-
-
-
         Catch ex As Exception
             Throw
         Finally
@@ -117,14 +115,15 @@ Public Class ClienteFidelizadoDAO
         With cmd
             .Connection = cnx
             .CommandType = CommandType.StoredProcedure
-            .CommandText = "MC_CLIENTE_FIDELIZADO_INS"
+            .CommandText = "MC_CLIENTE_FIDELIZADO_INS_OR_UPD"
 
             With .Parameters
                 .Add("@IdCliente", SqlDbType.Int).Value = clientes.IdCliente
-                .Add("@IdTipoIdentidad", SqlDbType.NVarChar, 15).Value = clientes.IdTipoIdentidad
+                .Add("@IdTipoIdentidad", SqlDbType.NVarChar, 2).Value = clientes.IdTipoIdentidad
                 .Add("@NumeroDocumento", SqlDbType.NVarChar, 15).Value = clientes.NumeroDocumento
                 .Add("@Nombres", SqlDbType.NVarChar, 50).Value = clientes.Nombres
-                .Add("@Apellidos", SqlDbType.NVarChar, 50).Value = clientes.Apellidos
+                .Add("@ApellidoMaterno", SqlDbType.NVarChar, 50).Value = clientes.ApellidoMaterno
+                .Add("@ApellidoPaterno", SqlDbType.NVarChar, 50).Value = clientes.ApellidoPaterno
                 .Add("@NombrePreferido", SqlDbType.NVarChar, 50).Value = clientes.NombrePreferido
                 .Add("@Telefono", SqlDbType.NVarChar, 50).Value = clientes.Telefono
                 .Add("@Correo", SqlDbType.NVarChar, 50).Value = clientes.Correo
@@ -145,53 +144,6 @@ Public Class ClienteFidelizadoDAO
             cnx.Open()
             If cmd.ExecuteNonQuery() > 0 Then
                 Result = True
-            End If
-        Catch ex As Exception
-            Throw
-        Finally
-            If cnx.State = ConnectionState.Open Then
-                cnx.Close()
-            End If
-        End Try
-        Return Result
-    End Function
-
-    Public Function UpdateClienteFidelizado(ByVal clientes As MC_clientesBE) As Int32
-        Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentasCentral)
-        Dim cmd As New SqlCommand
-        Dim Result As Int32 = 0
-
-        With cmd
-            .Connection = cnx
-            .CommandType = CommandType.StoredProcedure
-            .CommandText = "MC_CLIENTE_FIDELIZADO_UPD"
-
-            With .Parameters
-                .Add("@IdCliente", SqlDbType.Int).Value = clientes.IdCliente
-                .Add("@IdTipoIdentidad", SqlDbType.Int).Value = clientes.IdTipoIdentidad
-                .Add("@NumeroDocumento", SqlDbType.NVarChar, 15).Value = clientes.NumeroDocumento
-                .Add("@Nombres", SqlDbType.NVarChar, 50).Value = clientes.Nombres
-                .Add("@Apellidos", SqlDbType.NVarChar, 50).Value = clientes.Apellidos
-                .Add("@NombrePreferido", SqlDbType.NVarChar, 50).Value = clientes.NombrePreferido
-                .Add("@Telefono", SqlDbType.NVarChar, 50).Value = clientes.Telefono
-                .Add("@Correo", SqlDbType.NVarChar, 50).Value = clientes.Correo
-                .Add("@FechaNacimiento", SqlDbType.DateTime).Value = clientes.FechaNacimiento
-                .Add("@IdGenero", SqlDbType.Int).Value = clientes.IdGenero
-                .Add("@IdDistrito", SqlDbType.Int).Value = clientes.IdDistrito
-                .Add("@Ubigeo", SqlDbType.NVarChar, 50).Value = clientes.Ubigeo
-                .Add("@Direccion", SqlDbType.NVarChar, 400).Value = clientes.Direccion
-                .Add("@UrlConsentimiento", SqlDbType.NVarChar, 500).Value = clientes.UrlConsentimiento
-                .Add("@Estado", SqlDbType.Bit, 1).Value = clientes.Estado
-                .Add("@FechaRegistro", SqlDbType.DateTime).Value = clientes.FechaRegistro
-                .Add("@Puntos", SqlDbType.Int).Value = clientes.Puntos
-            End With
-
-        End With
-
-        Try
-            cnx.Open()
-            If cmd.ExecuteNonQuery() > 0 Then
-                Result = 1
             End If
         Catch ex As Exception
             Throw
@@ -301,6 +253,39 @@ Public Class ClienteFidelizadoDAO
             End If
         End Try
         Return dt
+    End Function
+
+    Public Function ValidateClienteDuplicado(ByVal NumeroDocumento As Integer, ByVal IdTipoIdentidad As String) As Boolean
+        Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentasCentral)
+        Dim cmd As New SqlCommand
+        Dim dt As New DataTable
+        Dim result As Boolean
+
+        With cmd
+            .Connection = cnx
+            .CommandType = CommandType.StoredProcedure
+            .CommandText = "MC_VALIDAR_CLIENTE_DUPLICADO"
+            With .Parameters
+                .Add("@NumeroDocumento", SqlDbType.NVarChar, 15).Value = NumeroDocumento
+                .Add("@IdTipoIdentidad", SqlDbType.NVarChar, 2).Value = IdTipoIdentidad
+            End With
+        End With
+        Try
+            cnx.Open()
+            dt.Load(cmd.ExecuteReader)
+            If dt.Rows(0).Item("Total") > 0 Then
+                result = False
+            Else
+                result = True
+            End If
+        Catch ex As Exception
+            Throw
+        Finally
+            If cnx.State = ConnectionState.Open Then
+                cnx.Close()
+            End If
+        End Try
+        Return result
     End Function
 End Class
 
