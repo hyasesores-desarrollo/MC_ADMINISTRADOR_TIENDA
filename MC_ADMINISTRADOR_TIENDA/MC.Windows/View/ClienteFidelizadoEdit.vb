@@ -271,8 +271,26 @@ Public Class ClienteFidelizadoEdit
             txtApellidoMaterno.Text = ResponseReniec.apellidoMaterno
         Catch ex As Exception
             MessageBox.Show("Numero de documento no valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtNombre.Enabled = True
+            txtApellidoPaterno.Enabled = True
+            txtApellidoMaterno.Enabled = True
         End Try
 
 
     End Sub
+
+    Private Sub dtFechaNacimiento_EditValueChanged(sender As Object, e As EventArgs) Handles dtFechaNacimiento.EditValueChanged
+        If dtFechaNacimiento.Text <> "" Then
+            dtFechaNacimiento.EditValue = If(dtFechaNacimiento.Text > CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day), CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day), dtFechaNacimiento.EditValue)
+            dtFechaNacimiento.EditValue = If(dtFechaNacimiento.Text < CDate(Today.Date.Year - 100 & "/" & Today.Date.Month & "/" & Today.Day), CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day), dtFechaNacimiento.EditValue)
+
+            'If dtFechaNacimiento.Text > CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day) Then
+            '    dtFechaNacimiento.EditValue = CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day)
+            'End If
+            'If dtFechaNacimiento.Text < CDate(Today.Date.Year - 100 & "/" & Today.Date.Month & "/" & Today.Day) Then
+            '    dtFechaNacimiento.EditValue = CDate(Today.Date.Year - 100 & "/" & Today.Date.Month & "/" & Today.Day)
+            'End If
+        End If
+    End Sub
+    'dtFechaNacimiento.EditValue = CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day)
 End Class

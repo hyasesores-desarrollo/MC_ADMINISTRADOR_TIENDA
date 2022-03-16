@@ -255,7 +255,7 @@ Public Class ClienteFidelizadoDAO
         Return dt
     End Function
 
-    Public Function ExisteClienteDuplicado(ByVal NumeroDocumento As Integer, ByVal IdTipoIdentidad As String) As Boolean
+    Public Function ExisteClienteDuplicado(ByVal NumeroDocumento As String, ByVal IdTipoIdentidad As String) As Boolean
         Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentasCentral)
         Dim cmd As New SqlCommand
         Dim dt As New DataTable
