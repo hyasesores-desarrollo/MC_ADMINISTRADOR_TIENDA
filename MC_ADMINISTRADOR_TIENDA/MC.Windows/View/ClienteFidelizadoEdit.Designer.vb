@@ -19,6 +19,7 @@ Partial Class ClienteFidelizadoEdit
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ClienteFidelizadoEdit))
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btnGuardar = New DevExpress.XtraBars.BarButtonItem()
@@ -69,6 +70,7 @@ Partial Class ClienteFidelizadoEdit
         Me.GridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControl1.SuspendLayout()
@@ -99,6 +101,7 @@ Partial Class ClienteFidelizadoEdit
         CType(Me.GridLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl
@@ -288,13 +291,13 @@ Partial Class ClienteFidelizadoEdit
         Me.LabelControl15.Appearance.Options.UseFont = True
         Me.LabelControl15.Location = New System.Drawing.Point(419, 59)
         Me.LabelControl15.Name = "LabelControl15"
-        Me.LabelControl15.Size = New System.Drawing.Size(59, 14)
+        Me.LabelControl15.Size = New System.Drawing.Size(38, 14)
         Me.LabelControl15.TabIndex = 17
-        Me.LabelControl15.Text = "Ubigeo (*)"
+        Me.LabelControl15.Text = "Ubigeo"
         '
         'cboDistrito
         '
-        Me.cboDistrito.EditValue = "[Vacio]"
+        Me.cboDistrito.EditValue = ""
         Me.cboDistrito.Location = New System.Drawing.Point(140, 57)
         Me.cboDistrito.MenuManager = Me.RibbonControl
         Me.cboDistrito.Name = "cboDistrito"
@@ -365,9 +368,9 @@ Partial Class ClienteFidelizadoEdit
         Me.LabelControl9.Appearance.Options.UseFont = True
         Me.LabelControl9.Location = New System.Drawing.Point(419, 85)
         Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(117, 14)
+        Me.LabelControl9.Size = New System.Drawing.Size(96, 14)
         Me.LabelControl9.TabIndex = 140
-        Me.LabelControl9.Text = "Nombre Preferido (*)"
+        Me.LabelControl9.Text = "Nombre Preferido"
         '
         'LabelControl5
         '
@@ -375,9 +378,9 @@ Partial Class ClienteFidelizadoEdit
         Me.LabelControl5.Appearance.Options.UseFont = True
         Me.LabelControl5.Location = New System.Drawing.Point(17, 86)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(61, 14)
+        Me.LabelControl5.Size = New System.Drawing.Size(40, 14)
         Me.LabelControl5.TabIndex = 139
-        Me.LabelControl5.Text = "Género (*)"
+        Me.LabelControl5.Text = "Género"
         '
         'dtFechaNacimiento
         '
@@ -434,13 +437,12 @@ Partial Class ClienteFidelizadoEdit
         Me.LabelControl7.Appearance.Options.UseFont = True
         Me.LabelControl7.Location = New System.Drawing.Point(419, 59)
         Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(117, 14)
+        Me.LabelControl7.Size = New System.Drawing.Size(96, 14)
         Me.LabelControl7.TabIndex = 17
-        Me.LabelControl7.Text = "Fecha Nacimiento (*)"
+        Me.LabelControl7.Text = "Fecha Nacimiento"
         '
         'cboGenero
         '
-        Me.cboGenero.EditValue = ""
         Me.cboGenero.Location = New System.Drawing.Point(140, 84)
         Me.cboGenero.MenuManager = Me.RibbonControl
         Me.cboGenero.Name = "cboGenero"
@@ -551,7 +553,6 @@ Partial Class ClienteFidelizadoEdit
         '
         'cboTipoDocumento
         '
-        Me.cboTipoDocumento.EditValue = "[Vacio]"
         Me.cboTipoDocumento.Location = New System.Drawing.Point(139, 7)
         Me.cboTipoDocumento.MenuManager = Me.RibbonControl
         Me.cboTipoDocumento.Name = "cboTipoDocumento"
@@ -582,6 +583,10 @@ Partial Class ClienteFidelizadoEdit
         '
         Me.GridView2.GridControl = Me.GridControl1
         Me.GridView2.Name = "GridView2"
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
         '
         'ClienteFidelizadoEdit
         '
@@ -630,6 +635,7 @@ Partial Class ClienteFidelizadoEdit
         CType(Me.GridLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -684,4 +690,5 @@ Partial Class ClienteFidelizadoEdit
     Friend WithEvents txtidCliente As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtApellidoMaterno As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class

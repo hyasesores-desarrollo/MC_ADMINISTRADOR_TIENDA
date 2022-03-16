@@ -25,7 +25,7 @@ Public Class ClienteFidelizadoEdit
         ControlesDevExpress.InitRibbonControlBarButttonShortCut(btnGuardar, System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.G, "Ctrl + G")
         ControlesDevExpress.InitRibbonControlBarButttonShortCut(btnCancelar, System.Windows.Forms.Keys.Escape, "Esc")
 
-        'Carga de controladores
+        'Carga de controladores (refactorizar)
         ControlesDevExpress.InitGridLookUpEdit(cboTipoDocumento, ClienteFidelizadoDAO.GetTipoDocumentoSUNAT(), "IDTIPODOCUMENTOIDENTIDAD", "DESCRIPCION", 500)
         ControlesDevExpress.InitGridLookUpEdit(cboGenero, ClienteFidelizadoDAO.GetGenero(), "IDSEXO", "DESCRIPCION", 500)
         ControlesDevExpress.InitGridLookUpEdit(cboDistrito, ClienteFidelizadoDAO.GetDistritoUbigeo(), "IdUbigeo", "Distrito", 500)
@@ -49,6 +49,7 @@ Public Class ClienteFidelizadoEdit
         'Se enlace el binding con la grilla
         Me.GridControl1.DataSource = bsclientefidelizadodetalle
 
+        AddHandler txtNumeroDocumento.KeyPress, AddressOf Tools.SoloNumeros
         'Se carga la entidad al editar
         LoadEntidad()
 
@@ -90,7 +91,6 @@ Public Class ClienteFidelizadoEdit
                 End If
             End If
         Else
-            MessageBox.Show("Tipo de documento y Número de documento ya existe")
         End If
 
     End Sub
@@ -102,9 +102,26 @@ Public Class ClienteFidelizadoEdit
 
     Public Function Validar() As Boolean
         Dim Result As Boolean = True
-        If ClienteFidelizadoDAO.IdCliente = 0 Then
-            Result = ClienteFidelizadoDAO.ValidateClienteDuplicado(txtNumeroDocumento.EditValue, cboTipoDocumento.EditValue)
+        ErrorProvider1.Clear()
+        Result = ValidarCamposObligatorios()
+        Result = If(Result, ValidarNuumeroDocumentoSegunTipo(), False)
+        Result = If(Result, ValidarCorreoyTelefono(), False)
+
+        Dim patron As String = "@."
+        Dim msjvalidador As String = "El correo debe contener un ""@"" y un ""."""
+        Result = If(Result, Tools.ValidarCaracteres(txtCorreo, patron, ErrorProvider1, msjvalidador), False)
+
+        'patron = """[!\·$%&/=¿¡?'_:;,|@#€*+.]"
+        patron = "()+[0-9]"
+        msjvalidador = "El teléfono contiene un valor no permitido"
+        Result = If(Result, Tools.ValidarCaracteres(txtTelefono, patron, ErrorProvider1, msjvalidador), False)
+
+
+        'SOLO AL CREAR: Valida tipo de documento y numero de documento duplicado 
+        If (ClienteFidelizadoDAO.IdCliente = 0) Then
+            Result = If(Result, ValidarClienteDuplicado(), False)
         End If
+
 
         If Result Then
             'Se carga la entidad
@@ -112,17 +129,17 @@ Public Class ClienteFidelizadoEdit
                 .IdCliente = ClienteFidelizadoDAO.IdCliente
                 .IdTipoIdentidad = cboTipoDocumento.EditValue
                 .NumeroDocumento = txtNumeroDocumento.EditValue
-                .Nombres = txtNombre.EditValue.ToUpper()
-                .ApellidoPaterno = txtApellidoPaterno.EditValue.ToUpper()
-                .ApellidoMaterno = txtApellidoMaterno.EditValue.ToUpper()
-                .NombrePreferido = txtNombrePreferido.EditValue.ToUpper()
-                .Telefono = txtTelefono.EditValue
-                .Correo = txtCorreo.EditValue
-                .FechaNacimiento = dtFechaNacimiento.EditValue
-                .IdGenero = cboGenero.EditValue
-                .Ubigeo = cboDistrito.EditValue
-                .Ubigeo = txtUbigeo.EditValue
-                .Direccion = txtDireccion.EditValue.ToUpper()
+                .Nombres = Tools.NullCardString(txtNombre.EditValue).ToUpper()
+                .ApellidoPaterno = Tools.NullCardString(txtApellidoPaterno.EditValue).ToUpper()
+                .ApellidoMaterno = Tools.NullCardString(txtApellidoMaterno.EditValue).ToUpper()
+                .NombrePreferido = Tools.NullCardString(txtNombrePreferido.EditValue).ToUpper()
+                .Telefono = Tools.NullCardString(txtTelefono.EditValue)
+                .Correo = Tools.NullCardString(txtCorreo.EditValue)
+                .FechaNacimiento = Tools.NullCardString(dtFechaNacimiento.EditValue)
+                .IdGenero = Tools.NullCardString(cboGenero.EditValue)
+                .Ubigeo = Tools.NullCardString(cboDistrito.EditValue)
+                '.Ubigeo = txtUbigeo.EditValue
+                .Direccion = Tools.NullCardString(txtDireccion.EditValue).ToUpper()
                 .UrlConsentimiento = ""
                 .Estado = chkActivo.EditValue
                 .FechaRegistro = System.DateTime.Now()
@@ -131,13 +148,70 @@ Public Class ClienteFidelizadoEdit
         End If
         Return Result
     End Function
+    Function ValidarClienteDuplicado() As Boolean
+        Dim result As Boolean = False
+        result = ClienteFidelizadoDAO.ExisteClienteDuplicado(txtNumeroDocumento.EditValue, cboTipoDocumento.EditValue)
+        If result Then
+            ErrorProvider1.SetError(cboTipoDocumento, "Tipo de documento y Número de documento ya existe")
+            ErrorProvider1.SetError(txtNumeroDocumento, "Tipo de documento y Número de documento ya existe")
+        End If
+        Return Not result
+    End Function
+    Function ValidarCorreoyTelefono() As Boolean
+        Dim result As Boolean = True
+        'El cliente debe tener registrado al menos 1 correo o telefono.
+        If txtCorreo.Text.Length = 0 And txtTelefono.Text.Length = 0 Then
+            result = False
+            ErrorProvider1.SetError(txtCorreo, "Se debe ingresar almenos un correo o teléfono")
+            ErrorProvider1.SetError(txtTelefono, "Se debe ingresar almenos un correo o teléfono")
+        End If
+        Return result
+    End Function
+    Function ValidarNuumeroDocumentoSegunTipo() As Boolean
+        Dim result As Boolean = True
+        'Valida caracteres de número de documento según tipo.
+        If (cboTipoDocumento.EditValue = 1 And txtNumeroDocumento.Text.Length <> 8) Or
+            (cboTipoDocumento.EditValue = 2 And txtNumeroDocumento.Text.Length <> 12) Or
+            (cboTipoDocumento.EditValue = 3 And txtNumeroDocumento.Text.Length <> 12) Then
+            result = False
+            ErrorProvider1.SetError(cboTipoDocumento, "Número de documento no coincide en caracteres según el tipo de documento")
+            ErrorProvider1.SetError(txtNumeroDocumento, "Número de documento no coincide en caracteres según el tipo de documento")
+        End If
+        Return result
+    End Function
+    Function ValidarCamposObligatorios() As Boolean
+        'campos obligatorios
+        Dim result As Boolean = False
+        If Tools.CampoObligatorio(txtNumeroDocumento, eValidaControl.TextEdit) And
+        Tools.CampoObligatorio(txtNombre, eValidaControl.TextEdit) And
+        Tools.CampoObligatorio(txtApellidoPaterno, eValidaControl.TextEdit) And
+        Tools.CampoObligatorio(txtApellidoMaterno, eValidaControl.TextEdit) And
+        Tools.CampoObligatorio(cboTipoDocumento, eValidaControl.GridLoopUpEdit) Then
+            result = True
+        End If
+        Return result
+    End Function
+
     Public Sub LoadEntidad()
         Try
-            If ClienteFidelizadoDAO.IdCliente = 0 Then
+            If ClienteFidelizadoDAO.IdCliente = 0 Then ' al crear
                 'Al crear un cliente debe estar oculto la autorización de datos personales.
                 Ocultar_objetos_autdatospersonales()
 
-            Else
+                cboTipoDocumento.EditValue = 1
+                'dtFechaNacimiento.EditValue = DateTime.Today()
+                cboGenero.EditValue = 1
+
+                dtFechaNacimiento.EditValue = CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day)
+
+            Else ' al editar
+                'Bloqueo de campos
+                cboTipoDocumento.Enabled = False
+                txtNumeroDocumento.Enabled = False
+                txtNombre.Enabled = False
+                txtApellidoMaterno.Enabled = False
+                txtApellidoPaterno.Enabled = False
+
                 'Se carga la entidad
                 clientesBE = ClienteFidelizadoDAO.GetbyidClienteFidelizado(ClienteFidelizadoDAO.IdCliente)
                 clientesBE.mc_clientedetalle = ClienteFidelizadoDAO.GetbyidClienteFidelizadoDetalle(ClienteFidelizadoDAO.IdCliente)
@@ -168,6 +242,19 @@ Public Class ClienteFidelizadoEdit
 
     End Sub
 
+    Private Sub cboTipoDocumento_EditValueChanged(sender As Object, e As EventArgs) Handles cboTipoDocumento.EditValueChanged
+        Select Case cboTipoDocumento.EditValue
+            Case 1
+                txtNombre.Enabled = False
+                txtApellidoMaterno.Enabled = False
+                txtApellidoPaterno.Enabled = False
+            Case 2, 3
+                txtNombre.Enabled = True
+                txtApellidoMaterno.Enabled = True
+                txtApellidoPaterno.Enabled = True
+
+        End Select
+    End Sub
     Private Sub cboDistrito_EditValueChanged(sender As Object, e As EventArgs) Handles cboDistrito.EditValueChanged
         txtUbigeo.Text = cboDistrito.EditValue
     End Sub

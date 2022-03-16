@@ -1,5 +1,6 @@
 ﻿Imports System.Configuration
 Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 Imports DevExpress.XtraEditors
 
 Public Enum eValidaControl
@@ -362,4 +363,25 @@ Public Class Tools
 
         Return lcn_tienda
     End Function
+    Shared Function ValidarCaracteres(control As Control, ByVal patron As String, ByVal errorvalidador As ErrorProvider, ByVal msjvalidador As String) As Boolean
+        Dim result As Boolean = True
+        If control.Text.Length > 0 And Not ValidarCorreo(control.Text, patron) Then
+            result = False
+            errorvalidador.SetError(control, msjvalidador)
+        End If
+        Return result
+    End Function
+
+    Shared Function ValidarCorreo(ByVal correo As String, ByVal patron As String) As Boolean
+        'Dim sreg As String = "^(?("")(""+?(?<!\\)"")|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$"
+        'Dim sreg As String = "[0-9]"
+        Dim rgx As Regex = New Regex(patron)
+        Dim rgxok As Match = rgx.Match(correo)
+        Return rgxok.Success
+    End Function
+    Shared Function NullCardString(ByVal cadena As String) As String
+
+        Return If(cadena Is Nothing, "", cadena)
+    End Function
 End Class
+

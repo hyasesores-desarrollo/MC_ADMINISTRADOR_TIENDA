@@ -255,7 +255,7 @@ Public Class ClienteFidelizadoDAO
         Return dt
     End Function
 
-    Public Function ValidateClienteDuplicado(ByVal NumeroDocumento As Integer, ByVal IdTipoIdentidad As String) As Boolean
+    Public Function ExisteClienteDuplicado(ByVal NumeroDocumento As Integer, ByVal IdTipoIdentidad As String) As Boolean
         Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentasCentral)
         Dim cmd As New SqlCommand
         Dim dt As New DataTable
@@ -274,9 +274,9 @@ Public Class ClienteFidelizadoDAO
             cnx.Open()
             dt.Load(cmd.ExecuteReader)
             If dt.Rows(0).Item("Total") > 0 Then
-                result = False
-            Else
                 result = True
+            Else
+                result = False
             End If
         Catch ex As Exception
             Throw
