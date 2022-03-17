@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class CodigoEntelDAO
-#Region "Procedimientos INFORES"
+#Region "Procedimientos INFOREST Codigos Promocion Digital"
     Public Function CodigoEntelPendienteGetIniCaja() As DataTable
         Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentas)
         Dim cmd As New SqlCommand
@@ -203,7 +203,115 @@ Public Class CodigoEntelDAO
         Return Result
     End Function
 #End Region
+#Region "Procedimientos INFOREST Codigos Promocion Tickect"
 
+#End Region
+#Region "Procedimientos MC_VENTAS Codigos Promocion Tickect"
+    Public Function CodigoPromocionTickectPendienteGetIniCaja(ByVal IdLocal As Integer) As DataTable
+        Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentasCentral)
+        Dim cmd As New SqlCommand
+        Dim dt As New DataTable
+        With cmd
+            .Connection = cnx
+            .CommandType = CommandType.StoredProcedure
+            .CommandText = "MC_PROMOCION_CONSUMO_PENDIENTE_REGISTRO_GETIDLOCAL"
+            With .Parameters
+                .Add("@IDLOCAL", SqlDbType.Int).Value = IdLocal
+            End With
+        End With
+
+        Try
+            cnx.Open()
+            dt.Load(cmd.ExecuteReader)
+        Catch ex As Exception
+            Throw
+        Finally
+            If cnx.State = ConnectionState.Open Then
+                cnx.Close()
+            End If
+        End Try
+        Return dt
+    End Function 'OK
+    Public Function ConsultaCodigoPromocionTickect(ByVal CodigoPromocion As String) As DataTable
+        Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentasCentral)
+        Dim cmd As New SqlCommand
+        Dim dt As New DataTable
+        With cmd
+            .Connection = cnx
+            .CommandType = CommandType.StoredProcedure
+            .CommandText = "MC_PROMOCION_CONSULTA_GETCODIGO"
+            With .Parameters
+                .Add("@CODIGOPROMOCION", SqlDbType.VarChar, 50).Value = CodigoPromocion
+            End With
+        End With
+
+        Try
+            cnx.Open()
+            dt.Load(cmd.ExecuteReader)
+        Catch ex As Exception
+            Throw
+        Finally
+            If cnx.State = ConnectionState.Open Then
+                cnx.Close()
+            End If
+        End Try
+        Return dt
+    End Function 'OK
+    Public Function DatosImpresionCodigoPromocionTickect(ByVal CodigoPromocion As String, ByVal IdLocal As Integer) As DataTable
+        Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentasCentral)
+        Dim cmd As New SqlCommand
+        Dim dt As New DataTable
+        With cmd
+            .Connection = cnx
+            .CommandType = CommandType.StoredProcedure
+            .CommandText = "MC_PROMOCION_DATOS_IMPRESION"
+            With .Parameters
+                .Add("@CODIGOPROMOCION", SqlDbType.VarChar, 50).Value = CodigoPromocion
+                .Add("@IDLOCAL", SqlDbType.Int).Value = IdLocal
+            End With
+        End With
+
+        Try
+            cnx.Open()
+            dt.Load(cmd.ExecuteReader)
+        Catch ex As Exception
+            Throw
+        Finally
+            If cnx.State = ConnectionState.Open Then
+                cnx.Close()
+            End If
+        End Try
+        Return dt
+    End Function 'OK
+    Public Function RegistrarCodigoPromocionTickect(ByVal CodigoPromocion As String, ByVal NumeroPedido As String, ByVal IdLocal As Integer, ByVal UsuarioRegistro As String) As Boolean
+        Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentasCentral)
+        Dim cmd As New SqlCommand
+        Dim Result As Boolean = False
+        With cmd
+            .Connection = cnx
+            .CommandType = CommandType.StoredProcedure
+            .CommandText = "MC_PROMOCION_REGISTRO_CONSUMO" ''"BD_SP_CCR_CODIGO_ENTEL_REGISTRAR_CONSUMO"
+            With .Parameters
+                .Add("@CODIGOPROMOCION", SqlDbType.VarChar, 50).Value = CodigoPromocion
+                .Add("@NUMEROPEDIDO", SqlDbType.VarChar, 20).Value = NumeroPedido
+                .Add("@IDLOCAL", SqlDbType.Int).Value = IdLocal
+                '.Add("@UsuarioRegistroConsumo", SqlDbType.VarChar, 20).Value = UsuarioRegistro
+            End With
+        End With
+        Try
+            cnx.Open()
+            cmd.ExecuteNonQuery()
+            Result = True
+        Catch ex As Exception
+            Throw
+        Finally
+            If cnx.State = ConnectionState.Open Then
+                cnx.Close()
+            End If
+        End Try
+        Return Result
+    End Function
+#End Region
 #Region "Procedimientos BD_CODIGOS_ENTEL"
     Public Function ConsultaCodigoEntel(ByVal CodigoEntel As String) As DataTable
         Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBCodigoEntel)

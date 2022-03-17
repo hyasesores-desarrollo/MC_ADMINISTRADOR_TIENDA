@@ -295,6 +295,12 @@
     <Compile Include="View\CodigoEntelList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\CodigoPromocionTipo.Designer.vb">
+      <DependentUpon>CodigoPromocionTipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\CodigoPromocionTipo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\ControlAsistencia.Designer.vb">
       <DependentUpon>ControlAsistencia.vb</DependentUpon>
     </Compile>
@@ -432,6 +438,18 @@
     <Compile Include="View\NotaCreditoList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\PromocionCodigoTickectDetails.Designer.vb">
+      <DependentUpon>PromocionCodigoTickectDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\PromocionCodigoTickectDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PromocionCodigoTickectList.Designer.vb">
+      <DependentUpon>PromocionCodigoTickectList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\PromocionCodigoTickectList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\Puntos.Designer.vb">
       <DependentUpon>Puntos.vb</DependentUpon>
     </Compile>
@@ -507,6 +525,9 @@
     <EmbeddedResource Include="View\CodigoEntelList.resx">
       <DependentUpon>CodigoEntelList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CodigoPromocionTipo.resx">
+      <DependentUpon>CodigoPromocionTipo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ControlAsistencia.resx">
       <DependentUpon>ControlAsistencia.vb</DependentUpon>
     </EmbeddedResource>
@@ -576,6 +597,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NotaCreditoList.resx">
       <DependentUpon>NotaCreditoList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PromocionCodigoTickectDetails.resx">
+      <DependentUpon>PromocionCodigoTickectDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PromocionCodigoTickectList.resx">
+      <DependentUpon>PromocionCodigoTickectList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Puntos.resx">
       <DependentUpon>Puntos.vb</DependentUpon>
