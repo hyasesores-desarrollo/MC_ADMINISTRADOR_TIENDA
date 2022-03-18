@@ -39,9 +39,6 @@ Public Class PromocionCodigoTickectList
             MessageBox.Show(ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    Private Sub BeneficiosNorkys_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        DesktopMain.Ribbon.SelectedPage = Me.RibbonPage1
-    End Sub
 
     Private Sub btnCerrar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCerrar.ItemClick
         Me.Close()

@@ -295,7 +295,7 @@ Public Class CodigoEntelDAO
                 .Add("@CODIGOPROMOCION", SqlDbType.VarChar, 50).Value = CodigoPromocion
                 .Add("@NUMEROPEDIDO", SqlDbType.VarChar, 20).Value = NumeroPedido
                 .Add("@IDLOCAL", SqlDbType.Int).Value = IdLocal
-                '.Add("@UsuarioRegistroConsumo", SqlDbType.VarChar, 20).Value = UsuarioRegistro
+                .Add("@USUARIO", SqlDbType.VarChar, 20).Value = UsuarioRegistro
             End With
         End With
         Try
