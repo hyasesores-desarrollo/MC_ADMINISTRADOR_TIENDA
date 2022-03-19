@@ -21,12 +21,12 @@ Partial Class CodigoPromocionTipo
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CodigoPromocionTipo))
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
-        Me.btnCodigoDigital = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnCodigoTickect = New DevExpress.XtraEditors.SimpleButton()
+        Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
+        Me.btnCerrar = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
-        Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
+        Me.btnCodigoDigital = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnCodigoTickect = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -39,6 +39,37 @@ Partial Class CodigoPromocionTipo
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
         Me.RibbonStatusBar.Size = New System.Drawing.Size(490, 31)
+        '
+        'RibbonControl
+        '
+        Me.RibbonControl.ExpandCollapseItem.Id = 0
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnCerrar})
+        Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonControl.MaxItemId = 2
+        Me.RibbonControl.Name = "RibbonControl"
+        Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
+        Me.RibbonControl.Size = New System.Drawing.Size(490, 143)
+        Me.RibbonControl.StatusBar = Me.RibbonStatusBar
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Caption = "Cerrar"
+        Me.btnCerrar.Glyph = CType(resources.GetObject("btnCerrar.Glyph"), System.Drawing.Image)
+        Me.btnCerrar.Id = 1
+        Me.btnCerrar.LargeGlyph = CType(resources.GetObject("btnCerrar.LargeGlyph"), System.Drawing.Image)
+        Me.btnCerrar.Name = "btnCerrar"
+        '
+        'RibbonPage1
+        '
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
+        Me.RibbonPage1.Name = "RibbonPage1"
+        Me.RibbonPage1.Text = "Tipo Promocion"
+        '
+        'RibbonPageGroup1
+        '
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.btnCerrar)
+        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "Opciones"
         '
         'btnCodigoDigital
         '
@@ -67,37 +98,6 @@ Partial Class CodigoPromocionTipo
         Me.btnCodigoTickect.Size = New System.Drawing.Size(158, 67)
         Me.btnCodigoTickect.TabIndex = 4
         Me.btnCodigoTickect.Text = "CODIGO TICKECT"
-        '
-        'RibbonPage1
-        '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
-        Me.RibbonPage1.Name = "RibbonPage1"
-        Me.RibbonPage1.Text = "Tipo Promocion"
-        '
-        'RibbonPageGroup1
-        '
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
-        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "Opciones"
-        '
-        'BarButtonItem1
-        '
-        Me.BarButtonItem1.Caption = "Cerrar"
-        Me.BarButtonItem1.Glyph = CType(resources.GetObject("BarButtonItem1.Glyph"), System.Drawing.Image)
-        Me.BarButtonItem1.Id = 1
-        Me.BarButtonItem1.LargeGlyph = CType(resources.GetObject("BarButtonItem1.LargeGlyph"), System.Drawing.Image)
-        Me.BarButtonItem1.Name = "BarButtonItem1"
-        '
-        'RibbonControl
-        '
-        Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1})
-        Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 2
-        Me.RibbonControl.Name = "RibbonControl"
-        Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl.Size = New System.Drawing.Size(490, 143)
-        Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
         'GroupControl1
         '
@@ -132,7 +132,7 @@ Partial Class CodigoPromocionTipo
     Friend WithEvents btnCodigoDigital As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnCodigoTickect As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents RibbonControl As DevExpress.XtraBars.Ribbon.RibbonControl
-    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnCerrar As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl

@@ -29,6 +29,7 @@ Partial Class PromocionCodigoTickectList
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -37,9 +38,9 @@ Partial Class PromocionCodigoTickectList
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnRefrescar, Me.btnNuevo, Me.btnCerrar})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnRefrescar, Me.btnNuevo, Me.btnCerrar, Me.BarButtonItem1})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 4
+        Me.RibbonControl.MaxItemId = 5
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl.Size = New System.Drawing.Size(638, 143)
@@ -73,7 +74,7 @@ Partial Class PromocionCodigoTickectList
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
         Me.RibbonPage1.Name = "RibbonPage1"
-        Me.RibbonPage1.Text = "Promociones"
+        Me.RibbonPage1.Text = "Códigos Promoción"
         '
         'RibbonPageGroup1
         '
@@ -107,6 +108,15 @@ Partial Class PromocionCodigoTickectList
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsView.ShowAutoFilterRow = True
         '
+        'BarButtonItem1
+        '
+        Me.BarButtonItem1.ActAsDropDown = True
+        Me.BarButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
+        Me.BarButtonItem1.Caption = "Códigos de Promoción Tickect"
+        Me.BarButtonItem1.Id = 4
+        Me.BarButtonItem1.Name = "BarButtonItem1"
+        Me.BarButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+        '
         'PromocionCodigoTickectList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -136,4 +146,5 @@ Partial Class PromocionCodigoTickectList
     Friend WithEvents btnRefrescar As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnNuevo As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnCerrar As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
 End Class

@@ -207,6 +207,34 @@ Public Class CodigoEntelDAO
 
 #End Region
 #Region "Procedimientos MC_VENTAS Codigos Promocion Tickect"
+    Public Function PromocionesCodigosGetIdLocal(ByVal IdLocal As Integer) As DataTable
+        Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentasCentral)
+        Dim cmd As New SqlCommand
+        Dim dt As New DataTable
+
+        With cmd
+            .Connection = cnx
+            .CommandType = CommandType.StoredProcedure
+            .CommandText = "MC_PROMOCIONES_CONSUMIDOS_GETIDLOCAL"
+            With .Parameters
+                .Add("@IDLOCAL", SqlDbType.Int).Value = IdLocal
+            End With
+        End With
+
+        Try
+            cnx.Open()
+            dt.Load(cmd.ExecuteReader)
+
+
+        Catch ex As Exception
+            Throw
+        Finally
+            If cnx.State = ConnectionState.Open Then
+                cnx.Close()
+            End If
+        End Try
+        Return dt
+    End Function
     Public Function CodigoPromocionTickectPendienteGetIniCaja(ByVal IdLocal As Integer) As DataTable
         Dim cnx As New SqlConnection(ConexionDAO.GetConexionDBVentasCentral)
         Dim cmd As New SqlCommand

@@ -1,29 +1,32 @@
 ﻿Imports MC.Data
 Imports MC.Framework
 Public Class PromocionCodigoTickectList
-    Dim bsBeneficiosNorkys As New BindingSource
+    Dim bsPromocionesCodigos As New BindingSource
     Sub New()
 
         InitializeComponent()
         Me.Text = "CONSULTA CÓDIGO PROMOCIÓN TICKECT"
+
         Me.KeyPreview = True
         Me.WindowState = FormWindowState.Maximized
+
         ControlesDevExpress.InitRibbonControl(RibbonControl)
 
         ControlesDevExpress.InitGridControl(GridControl1)
-        ControlesDevExpress.InitGridViewColumn(GridView1, "ID", "IDBENEFICIONORKYSEMPLEADO", 80, False, ControlesDevExpress.eGridViewFormato.Ninguno, False)
-        ControlesDevExpress.InitGridViewColumn(GridView1, "NOMBRE TRABAJADOR", "NOMBREEMPLEADO", 200, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
-        ControlesDevExpress.InitGridViewColumn(GridView1, "N° DOCUMENTO EMPLEADO", "NUMERODOCUMENTO", 130, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
-        ControlesDevExpress.InitGridViewColumn(GridView1, "NUMERO PEDIDO", "NUMEROPEDIDO", 120, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
-        ControlesDevExpress.InitGridViewColumn(GridView1, "FECHA CONSUMO", "FECHACONSUMO", 150, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
-        ControlesDevExpress.InitGridViewColumn(GridView1, "CANAL VENTA", "CANALVENTA", 250, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
+        ControlesDevExpress.InitGridViewColumn(GridView1, "LOCAL", "LocalGeredadoTickect", 150, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
+        ControlesDevExpress.InitGridViewColumn(GridView1, "CODIGO PROMOCION", "CodigoPromocion", 80, False, ControlesDevExpress.eGridViewFormato.Ninguno, False)
+        ControlesDevExpress.InitGridViewColumn(GridView1, "NUMERO PEDIDO", "NumeroPedidoCanje", 200, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
+        ControlesDevExpress.InitGridViewColumn(GridView1, "LOCAL CANJE", "LocalCanje", 250, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
+        ControlesDevExpress.InitGridViewColumn(GridView1, "USUARIO REGISTRO CANJE", "UsuarioCanje", 130, True, ControlesDevExpress.eGridViewFormato.Ninguno, False)
+        ControlesDevExpress.InitGridViewColumn(GridView1, "FECHA CANJE", "FechaCanje", 120, True, ControlesDevExpress.eGridViewFormato.FechaHora, False)
         'UsuarioRegistroConsumo
         With GridView1
-            .Columns("NOMBREEMPLEADO").OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains
-            .Columns("NUMERODOCUMENTO").OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains
-            .Columns("NUMEROPEDIDO").OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains
-            .Columns("FECHACONSUMO").OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains
-            .Columns("CANALVENTA").OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains
+            .Columns("LocalGeredadoTickect").OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains
+            .Columns("CodigoPromocion").OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains
+            .Columns("NumeroPedidoCanje").OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains
+            .Columns("LocalCanje").OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains
+            .Columns("UsuarioCanje").OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains
+            .Columns("FechaCanje").OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains
         End With
 
         Refrescar()
@@ -33,8 +36,8 @@ Public Class PromocionCodigoTickectList
     Private Sub Refrescar()
         Try
 
-            'bsBeneficiosNorkys.DataSource = BeneficioNorkysDAO.BeneficiosNorkysList(Tools.ReadAppSettings("IdLocal"))
-            'GridControl1.DataSource = bsBeneficiosNorkys
+            bsPromocionesCodigos.DataSource = CodigoEntelDAO.PromocionesCodigosGetIdLocal(Tools.ReadAppSettings("IdLocal"))
+            GridControl1.DataSource = bsPromocionesCodigos
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
