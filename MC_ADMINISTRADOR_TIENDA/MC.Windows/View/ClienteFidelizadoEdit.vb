@@ -283,14 +283,6 @@ Public Class ClienteFidelizadoEdit
         If dtFechaNacimiento.Text <> "" Then
             dtFechaNacimiento.EditValue = If(dtFechaNacimiento.Text > CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day), CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day), dtFechaNacimiento.EditValue)
             dtFechaNacimiento.EditValue = If(dtFechaNacimiento.Text < CDate(Today.Date.Year - 100 & "/" & Today.Date.Month & "/" & Today.Day), CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day), dtFechaNacimiento.EditValue)
-
-            'If dtFechaNacimiento.Text > CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day) Then
-            '    dtFechaNacimiento.EditValue = CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day)
-            'End If
-            'If dtFechaNacimiento.Text < CDate(Today.Date.Year - 100 & "/" & Today.Date.Month & "/" & Today.Day) Then
-            '    dtFechaNacimiento.EditValue = CDate(Today.Date.Year - 100 & "/" & Today.Date.Month & "/" & Today.Day)
-            'End If
         End If
     End Sub
-    'dtFechaNacimiento.EditValue = CDate(Today.Date.Year - 18 & "/" & Today.Date.Month & "/" & Today.Day)
 End Class
