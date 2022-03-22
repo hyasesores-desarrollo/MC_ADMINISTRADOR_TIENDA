@@ -5,9 +5,9 @@ Public Class CodigoEntelList
     Sub New()
 
         InitializeComponent()
-        Me.Text = "CONSULTA CÓDIGO PROMOCIÓN"
+        Me.Text = "CONSULTA CÓDIGO PROMOCIÓN DIGITAL"
         Me.KeyPreview = True
-
+        Me.WindowState = FormWindowState.Maximized
         ControlesDevExpress.InitRibbonControl(RibbonControl)
 
         ControlesDevExpress.InitGridControl(GridControl1)
@@ -51,9 +51,9 @@ Public Class CodigoEntelList
         Me.Close()
     End Sub
 
-    Private Sub CodigoEntelList_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        DesktopMain.Ribbon.SelectedPage = Me.RibbonPage1
-    End Sub
+    'Private Sub CodigoEntelList_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+    '    DesktopMain.Ribbon.SelectedPage = Me.RibbonPage1
+    'End Sub
 
     Private Sub btnRefrescar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnRefrescar.ItemClick
         Refrescar()

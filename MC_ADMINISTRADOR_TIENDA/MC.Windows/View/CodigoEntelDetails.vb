@@ -8,7 +8,7 @@ Public Class CodigoEntelDetails
         InitializeComponent()
 
         Me.StartPosition = FormStartPosition.CenterScreen
-        Me.Text = "CONSULTA CÓDIGO PROMOCIÓN"
+        Me.Text = "CONSULTA CÓDIGO PROMOCIÓN DIGITAL"
         Me.KeyPreview = True
 
         ControlesDevExpress.InitRibbonControl(RibbonControl)

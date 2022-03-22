@@ -122,7 +122,7 @@ Public Class DesktopMain
             Case "MANTENIMIENTO DE MOZOS" : OpenFormulario("MozoList")
             Case "MANTENIMIENTO DE MOTORIZADOS" : OpenFormulario("MotorizadoList")
             Case "ENLACE CALL CENTER" : OpenFormulario("EnlaceCallCenter")
-            Case "CÓDIGO DE PROMOCIÓN" : OpenFormulario("CodigoEntelList") 'Código de Promoción
+            Case "CÓDIGO DE PROMOCIÓN" : OpenFormulario("CodigoPromocionTipo") 'Código de Promoción
             Case "BENEFICIOS NORKYS" : OpenFormulario("BeneficiosNorkys")
             Case "NOTA DE CREDITO"
                 tCajaEmision = Tools.ReadAppSettings("Caja")
